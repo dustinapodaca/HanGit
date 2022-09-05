@@ -1,9 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>HanGit</title>
+  <title>HanGit</title>
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
+  <header>
+    <img src="https://via.placeholder.com/50" alt="HanGit Logo">
+    <h1>HanGit</h1>
+    <nav>
+      <div>
+        <button type="submit" class="diffButtons" id="easy">Easy</button>
+        <button type="submit" class="diffButtons" id="medium">Medium</button>
+        <button type="submit" class="diffButtons" id="hard">Hard</button>
+      </div>
+      <div>
+        <a href="results.html">Results</a></li>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="questionContainer">
+      <p id="question"></p>
+    </div>
+    <div id="keyboardContainer">
+      <div id="keyboardButtons"></div>
+    </div>
+    <div class="catContainer">
+      <p class="pClicks">Clicks Remaining: <a id="clicks">8</a></p>
+      <canvas id="octocat"></canvas>
+    </div>
+    <div>
+      <button type="submit" class="resetButton" id="reset">Reset Game</button>
+    </div>
+    <div>
+      <h3 class="infoHeader">Info About Game</h3>
+      <p class="gameInfo">This will contain detailed information and instructions about the game.</p>
+    </div>
+
+  </main>
+  <footer>
+    <script src="app.js"></script>
+    <p>Created by &COPY; UltraTeam</p>
+  </footer>
+
 </body>
 </html>
