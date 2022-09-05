@@ -22,3 +22,7 @@ ___
 - HanGit will help beginners with Git and Github in an interactive game format.
 
 ---
+
+### Wireframe
+
+<img src="./assets/img/hangit-wireframe.png" width="1000" height="729" alt="wireframe of application">  
