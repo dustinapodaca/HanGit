@@ -25,4 +25,4 @@ ___
 
 ### Wireframe
 
-<img src="./assets/img/hangit-wireframe.png" width="1000" height="729" alt="wireframe of application">  
+<img src="./assets/img/hangit-wireframe.png" width="830" height="605" alt="wireframe of application">  
