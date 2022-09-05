@@ -76,6 +76,7 @@ function generateButton() {
           </button>`
     )
     .join(' ');
+
   return buttonsHTML;
 }
 
