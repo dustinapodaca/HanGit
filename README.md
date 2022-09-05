@@ -27,6 +27,7 @@ ___
 
 <img src="./assets/img/hangit-wireframe.png" width="830" height="605" alt="wireframe of application">  
 
+
 ### User Stories
 
 1. Title: HanGit
@@ -54,6 +55,4 @@ ___
 - Ensure user can go through answering the questions and if right, have their score displayed in results page that displays a visual graphic of those results.
 
 ---
-
-
 
