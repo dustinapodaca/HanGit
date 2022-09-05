@@ -10,7 +10,6 @@
 
 ## Software Requirements
 
----
 
 ### Vision
 
