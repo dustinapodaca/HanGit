@@ -42,6 +42,8 @@
 ### Stretch Goal
 
 * Create a landing page that displays to the user multiple games to play- including a traditional "Hangman" game as well as "HanGit".
+* Make animation for alaphet buttons to shake when a letter is incorrect.
+* Make the hangman be an image of Octocat instead of a stick figure.
 
 ### Data Flow
 

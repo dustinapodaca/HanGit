@@ -2,8 +2,32 @@
 <html lang="en">
 <head>
   <title>HanGit Results</title>
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  
+  <header>
+    <img src="https://via.placeholder.com/50" alt="HanGit Logo">
+    <h1>HanGit</h1>
+    <nav>
+      <div>
+        <a href="index.html">Home</a></li>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div>
+      <h3 class="resultsHeader">Results Info</h3>
+      <p class="resultsInfo" id="resultsInfo">This will contain a personalized message.</p>
+    </div>
+    <div class="chartContainer">
+      <canvas id="resultsChart"></canvas>
+    </div>
+  </main>
 </body>
+  <footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script src="app.js"></script>
+    <p>Created by &COPY; UltraTeam</p>
+  </footer>
 </html>
