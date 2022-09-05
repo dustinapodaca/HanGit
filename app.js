@@ -49,8 +49,8 @@ const hAnswer = [
 ];
 
 function buttonClick () {
-    console.log('button Clicked!!');
-};
+  console.log('button Clicked!!');
+}
 
 let easyButtonId = document.getElementById('easy');
 let mediumButtonId = document.getElementById('medium');
@@ -64,21 +64,21 @@ hardButtonId.addEventListener('click', buttonClick);
 resetButtonId.addEventListener('click', buttonClick);
 
 function generateButton() {
-    const buttonsHTML = "abcdefghijklmnopqrstuvwxyz.-"
-      .split("")
-      .map(
-        (letter) =>
-          `<button
-           class = "alphabetButtonJS" 
-           id="${letter}"
-           >
-          ${letter}
-          </button>`
-      )
-      .join("");
-  
-    return buttonsHTML;
-  }
+  const buttonsHTML = 'abcdefghijklmnopqrstuvwxyz.-'
+    .split('')
+    .map(
+      (letter) =>
+        `<button
+          class = 'alphabetButtonJS' 
+          id='${letter}'
+          >
+        ${letter}
+        </button>`
+    )
+    .join('');
+
+  return buttonsHTML;
+}
 
 keyboardButtons.innerHTML = generateButton();
 
