@@ -25,7 +25,7 @@ ___
 
 ## Wireframe
 
-<img src="./assets/img/hangit-wireframe.png" width="830" height="605" alt="wireframe of application">  
+<img src="./assets/img/hangit-wireframe-1.png" width="830" height="591" alt="wireframe of application">  
 
 ## User Stories
 
