@@ -2,7 +2,6 @@
 
 let wordDisplay = [];
 let answer = '';
-let winningCheck = '';
 let clickRemaining = 8;
 let answerDisplay = document.getElementById('letterDisplay');
 let livesDisplay = document.getElementById('clicks');
@@ -98,13 +97,13 @@ function handleClick(event) {
 }
 function eQuestionAndAnswer(){
   for (let i = 0; i < eQuestion.length; i++){
-
     let generateEQ = document.getElementById('question');
     generateEQ.innerHTML = eQuestion[i];
     console.log(eQuestion[i]);
     answer = eAnswer[i];
     answerDisplay.innerHTML = generateAnswerDisplay(answer);
     console.log(answer);
+    break;
   }
 }
 
@@ -126,7 +125,6 @@ function answerContainer() {
   answer = '';
   clickRemaining = 8;
   wordDisplay = [];
-  winningCheck = '';
   // context.clearRect(0, 0, 400, 400);
   // canvas();
   livesDisplay.innerHTML = `You have ${clickRemaining} lives!`;

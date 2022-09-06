@@ -159,15 +159,43 @@ h1 {
   transition: 200ms;
 }
 
+.counterDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 900px;
+  margin-bottom: 15px;
+  border: thin solid black;
+  box-shadow: 1px 1px 8px #b4b4b4;
+  background-color: rgb(241, 247, 248);
+  border-radius: 5px;
+}
+
+#letterDisplay {
+  border: thin solid black;
+  max-width: 900px;
+  margin: 0 auto;
+  display: block;
+  height: 55px;
+  margin-bottom: 15px;
+  background-color: rgb(241, 247, 248);
+  box-shadow: 1px 1px 8px #b4b4b4;
+  border-radius: 5px;
+}
 
 .catContainer {
   display: block;
-  margin: 25px auto;
+  margin: 0 auto;
   border: 1px solid black;
   border-radius: 5px;
   width: 100%;
+  max-width: 800px;
   background-color: rgb(241, 247, 248);
   box-shadow: 1px 1px 8px #b4b4b4;
+  margin-bottom: 20px;
 
 }
 
@@ -176,5 +204,50 @@ h1 {
   margin: 0 auto;
   height: 100%;
   width: 100%;
+}
+
+.infoHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 900px;
+  margin-bottom: 15px;
+  border: thin solid black;
+  box-shadow: 1px 1px 8px #b4b4b4;
+  background-color: rgb(241, 247, 248);
+  border-radius: 5px;
+}
+
+h3 {
+  font-size: 25px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-weight: 100;
+  margin-top: 8px;
+}
+
+.gameInfo {
+  text-align: left;
+  text-indent: 30px;
+  max-width: 800px;
+  font-family: 'Roboto Mono', monospace;
+  line-height: 25px;
+  font-weight: 300;
+  font-size: 14px;
+  margin: 10px 30px;
+}
+
+footer p {
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  line-height: 25px;
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
