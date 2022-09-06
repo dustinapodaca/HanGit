@@ -78,7 +78,7 @@ while (buttonsHTML.length > 0) {
   createButton.innerHTML = spliced;
   letterDisplay.append(createButton);
   createButton.classList.add('keyboardButtons');
-  keyboardButtons.appendChild(createButton);
+  eAnswerDisplay.appendChild(createButton);
   let alphaButtonId = document.getElementById(spliced);
   alphaButtonId.addEventListener('click', buttonClick);
 }
