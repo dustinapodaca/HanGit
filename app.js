@@ -1,5 +1,9 @@
 'use strict';
 
+let wordDisplay = [];
+let answer = '';
+let eAnswerDisplay = document.getElementById('keyboardButtons');
+
 const eQuestion = [
   'I need to stage my files in order to make them available in git hub, what is the first command would I run ? ',
   'After adding the files I have made, I need to add a message with the files, what command would I run ? ',
@@ -66,17 +70,40 @@ mediumButtonId.addEventListener('click', buttonClick);
 hardButtonId.addEventListener('click', buttonClick);
 resetButtonId.addEventListener('click', buttonClick);
 
-
 //makes the alphabet buttons
-const buttonsHTML = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','.','-']
+const buttonsHTML = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','.','-'];
 while (buttonsHTML.length > 0) {
-    let spliced = buttonsHTML.shift();
-    let createButton = document.createElement('button');
-    createButton.id = spliced;
-    createButton.innerHTML = spliced;
-    keyboardButtons.append(createButton);
-    let alphaButtonId = document.getElementById(spliced);
-    alphaButtonId.addEventListener('click', buttonClick);
+  let spliced = buttonsHTML.shift();
+  let createButton = document.createElement('button');
+  createButton.id = spliced;
+  createButton.innerHTML = spliced;
+  keyboardButtons.append(createButton);
+  let alphaButtonId = document.getElementById(spliced);
+  alphaButtonId.addEventListener('click', buttonClick);
 }
 
+function eQuestionAndAnswer(){
+  for (let i = 0; i < eQuestion.length; i++){
 
+    const generateEQ = document.getElementById('question');
+    generateEQ.innerHTML = eQuestion[i];
+
+    answer = eAnswer;
+    eAnswerDisplay.innerHTML = generateAnswerDisplay(eAnswer[i]);
+  }
+
+
+
+  function generateAnswerDisplay(word) {
+    let answerArray = word.split('');
+    // console.log(answerArray);
+    for (let i = 0; i < answer.length; i++) {
+      if (answerArray[i] !== '-') {
+        wordDisplay.push('_');
+      } else {
+        wordDisplay.push('-');
+      }
+    }
+    return wordDisplay.join(' ');
+  }
+}
