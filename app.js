@@ -48,37 +48,35 @@ const hAnswer = [
   'stash save'
 ];
 
+
 function buttonClick () {
-  console.log('button Clicked!!');
+    console.log('yes')
 }
 
+const GETTHEID  = document.getElementById(this)
 let easyButtonId = document.getElementById('easy');
 let mediumButtonId = document.getElementById('medium');
 let hardButtonId = document.getElementById('hard');
 let resetButtonId = document.getElementById('reset');
 const keyboardButtons = document.getElementById('keyboardButtons');
 
+
 easyButtonId.addEventListener('click', buttonClick);
 mediumButtonId.addEventListener('click', buttonClick);
 hardButtonId.addEventListener('click', buttonClick);
 resetButtonId.addEventListener('click', buttonClick);
 
-function generateButton() {
-  const buttonsHTML = 'abcdefghijklmnopqrstuvwxyz.-'
-    .split('')
-    .map(
-      (letter) =>
-        `<button
-          class = 'alphabetButtonJS' 
-          id='${letter}'
-          >
-        ${letter}
-        </button>`
-    )
-    .join('');
 
-  return buttonsHTML;
+//makes the alphabet buttons
+const buttonsHTML = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','.','-']
+while (buttonsHTML.length > 0) {
+    let spliced = buttonsHTML.shift();
+    let createButton = document.createElement('button');
+    createButton.id = spliced;
+    createButton.innerHTML = spliced;
+    keyboardButtons.append(createButton);
+    let alphaButtonId = document.getElementById(spliced);
+    alphaButtonId.addEventListener('click', buttonClick);
 }
 
-keyboardButtons.innerHTML = generateButton();
 
