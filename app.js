@@ -160,3 +160,91 @@ const noose = new Image(); {
     }
   }
 }
+let maxWrong = 8;
+let mistakes = 0;
+let guessed = [];
+let wordStatus = null;
+
+function randomWord() {
+  answer = eAnswer[Math.floor(Math.random() * eAnswer.length)];
+  answer = mAnswer[Math.floor(Math.random() * mAnswer.length)];
+  answer = hAnswer[Math.floor(Math.random() * hAnswer.length)];
+}
+
+function handleGuess(chosenLetter) {
+  guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
+  document.getElementById(chosenLetter).setAttribute('disabled', true);
+
+  alert(hint);
+
+  if (answer.indexOf(chosenLetter) >= 0) {
+    guessedWord();
+    checkIfGameWon();
+  } else if (answer.indexOf(chosenLetter) === -1) {
+    mistakes++;
+    updateMistakes();
+    checkIfGameLost();
+    updateOctocatPic();
+  }
+}
+
+
+
+function updateOcotocatPic() {
+    if (mistakes === 1) {
+        context.drawImage(head, 0, 0, 1200, 950);
+    } else if (mistakes === 2) {
+        context.drawImage(firstArm, 0, 0, 1200, 950);
+    } else if (mistakes === 3) {
+        context.drawImage(secondArm, 0, 0, 1200, 950);
+    } else if (mistakes === 4) {
+        context.drawImage(thirdArm, 0, 0, 1200, 950);
+} else if (mistakes === 5) {
+    context.drawImage(fourthArm, 0, 0, 1200, 950);
+} else if (mistakes === 6) {
+context.drawImage(fifthArm, 0, 0, 1200, 950);
+  } else (mistakes === 7) {
+    context.drawImage(puddle, 0, 0, 1200, 950);
+}
+ 
+
+function checkIfGameWon() {
+  if (wordStatus === answer) {
+    document.getElementById('keyboard').innerHTML = 'You Won!!';
+  }
+}
+
+function checkIfGameLost() {
+    if (mistakes === maxWrong) {
+        document.getElementById('wordSpotlight').innerHTML = 'The answer was: ' + answer;
+        document.getElementById('keyboard').innerHTML = 'You Lost!!';
+    }
+    }   
+
+function guessedWord() {
+  wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
+
+  document.getElementById('wordSpotlight').innerHTML = wordStatus;
+}
+
+function updateMistakes() {
+  document.getElementById('mistakes').innerHTML = mistakes;
+}
+
+function reset() {
+  mistakes = 0;
+  guessed = [];
+  document.getElementById('octoCat').src = '';
+
+  randomWord();
+  guessedWord();
+  updateMistakes();
+  generateButtons();
+}
+
+document.getElementById('maxWrong').innerHTML = maxWrong;
+
+randomWord();
+generateButtons();
+guessedWord();
+
