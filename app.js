@@ -92,8 +92,6 @@ function eQuestionAndAnswer(){
     eAnswerDisplay.innerHTML = generateAnswerDisplay(eAnswer[i]);
   }
 
-
-
   function generateAnswerDisplay(word) {
     let answerArray = word.split('');
     // console.log(answerArray);
@@ -107,7 +105,6 @@ function eQuestionAndAnswer(){
     return wordDisplay.join(' ');
   }
 }
-
 
 //canvas Hangman Images
 
