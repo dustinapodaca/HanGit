@@ -61,7 +61,7 @@ let easyButtonId = document.getElementById('easy');
 let mediumButtonId = document.getElementById('medium');
 let hardButtonId = document.getElementById('hard');
 let resetButtonId = document.getElementById('reset');
-const keyboardButtons = document.getElementById('keyboardButtons');
+const letterDisplay = document.getElementById('letterDisplay');
 
 
 easyButtonId.addEventListener('click', buttonClick);
@@ -76,7 +76,7 @@ while (buttonsHTML.length > 0) {
   let createButton = document.createElement('button');
   createButton.id = spliced;
   createButton.innerHTML = spliced;
-  keyboardButtons.append(createButton);
+  letterDisplay.append(createButton);
   let alphaButtonId = document.getElementById(spliced);
   alphaButtonId.addEventListener('click', buttonClick);
 }
