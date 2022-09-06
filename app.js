@@ -54,10 +54,9 @@ const hAnswer = [
 
 
 function buttonClick () {
-    console.log('yes')
+  console.log('yes');
 }
 
-const GETTHEID  = document.getElementById(this)
 let easyButtonId = document.getElementById('easy');
 let mediumButtonId = document.getElementById('medium');
 let hardButtonId = document.getElementById('hard');
