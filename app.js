@@ -82,3 +82,60 @@ function generateButton() {
 
 keyboardButtons.innerHTML = generateButton();
 
+
+
+
+//canvas Hangman Images
+
+const canvas = document.getElementById('octocat');
+const context = canvas.getContext('2d');
+const noose = new Image(); {
+  noose.src = './assets/img/noose.png';
+  noose.onload = () => {
+    context.drawImage(noose, 0, 0, 1200, 950);
+  };
+  const head = new Image(); {
+    head.src = './assets/img/head.png';
+    head.onload = () => {
+      context.drawImage(head, 0, 0, 1200, 950);
+    };
+    const firstArm = new Image(); {
+      firstArm.src = './assets/img/firstArm.png';
+      firstArm.onload = () => {
+        context.drawImage(firstArm, 0, 0, 1200, 950);
+      };
+      const secondArm = new Image(); {
+        secondArm.src = './assets/img/secondArm.png';
+        secondArm.onload = () => {
+          context.drawImage(secondArm, 0, 0, 1200, 950);
+        };
+        const thirdArm = new Image(); {
+          thirdArm.src = './assets/img/thirdArm.png';
+          thirdArm.onload = () => {
+            context.drawImage(thirdArm, 0, 0, 1200, 950);
+          };
+          const fourthArm = new Image(); {
+            fourthArm.src = './assets/img/fourthArm.png';
+            fourthArm.onload = () => {
+              context.drawImage(fourthArm, 0, 0, 1200, 950);
+            };
+            const fifthArm = new Image(); {
+              fifthArm.src = './assets/img/fifthArm.png';
+              fifthArm.onload = () => {
+                context.drawImage(fifthArm, 0, 0, 1200, 950);
+              };
+              const puddle = new Image(); {
+                puddle.src = './assets/img/puddle.png';
+                puddle.onload = () => {
+                  context.drawImage(puddle, 0, 0, 1200, 950);
+                };
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
