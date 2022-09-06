@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <title>HanGit</title>
-  <link rel="stylesheet" href="reset.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/style.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
   </style>
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div id="resultsDiv">
-      <a href="results.html" class="resultsLink">Results</a></li>
+      <a href="results.html" class="resultsLink">Results</a>
     </div>
   </header>
   <main>
@@ -31,19 +31,19 @@
     <div id="keyboardContainer">
       <div id="keyboardButtons"></div>
     </div>
-    <div>
+    <div class="counterDiv">
       <p class="pClicks">Clicks Remaining: <a id="clicks">8</a></p>
-      <div id="letterDisplay"></div>
+      <div>
+        <button type="submit" class="resetButton" id="reset">Reset Game</button>
+      </div>
     </div>
+    <div id="letterDisplay"></div>
     <div class="catContainer">
       <canvas id="octocat" width="1200" height="950"></canvas>
     </div>
-    <div>
-      <button type="submit" class="resetButton" id="reset">Reset Game</button>
-    </div>
-    <div>
-      <h3 class="infoHeader">Info About Game</h3>
-      <p class="gameInfo">This will contain detailed information and instructions about the game.</p>
+    <div class="infoHeader">
+      <h3>Info About Game</h3>
+      <p class="gameInfo">HanGit is an interactive app, using the "Hangman" game as a model to help developers learn git commands. HanGit will help beginners with Git and Github in an interactive game format.</p> 
     </div>
 
   </main>
