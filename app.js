@@ -1,5 +1,9 @@
 'use strict';
 
+let wordDisplay = [];
+let answer = '';
+let eAnswerDisplay = document.getElementById('keyboardButtons');
+
 const eQuestion = [
   'I need to stage my files in order to make them available in git hub, what is the first command would I run ? ',
   'After adding the files I have made, I need to add a message with the files, what command would I run ? ',
@@ -81,4 +85,33 @@ function generateButton() {
 }
 
 keyboardButtons.innerHTML = generateButton();
+
+function eQuestionAndAnswer(){
+  const questionOrder = Math.floor(Math.random() * eQuestion.length);
+  const chosenEQuestion = eQuestion[questionOrder];
+  const wordOrder = Math.floor(Math.random() * chosenEQuestion.length);
+  const chosenWord = chosenEQuestion[wordOrder];
+
+  const generateEQ = document.getElementById('easy');
+  generateEQ.innerHTML = eQuestion;
+
+  answer = chosenWord;
+  eAnswerDisplay.innerHTML = generateAnswerDisplay(chosenWord);
+}
+
+
+
+function generateAnswerDisplay(word) {
+  let answerArray = word.split('');
+  console.log(answerArray);
+  for (let i = 0; i < answer.length; i++) {
+    if (answerArray[i] !== '-') {
+      wordDisplay.push('_');
+    } else {
+      wordDisplay.push('-');
+    }
+  }
+  // console.log(generateAnswerDisplay());
+  return wordDisplay.join(' ');
+}
 
