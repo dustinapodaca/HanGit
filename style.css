@@ -3,12 +3,172 @@ body {
   height: 100%;
   margin: 0 auto;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  max-width: 900px;
+  background-color: rgb(213, 238, 248);
 }
+
+header {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Roboto Mono', monospace;
+  border: 1px solid black;
+  width: 100%;
+  margin-bottom: 15px;
+  box-shadow: 1px 1px 8px #b4b4b4;
+  background-color: rgb(241, 247, 248);
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 45px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-weight: 100;
+}
+
+.headerImg {
+  margin: 10px;
+  width: 95px;
+  height: 75px;
+}
+
+#headerDiv {
+  display: flex;
+}
+
+#buttonDiv {
+  display: block;
+  margin-top: 5px;
+}
+
+.diffButtons {
+  display: block;
+  margin: 6px auto;
+  margin-left: 20px;
+  padding: 0 5px;
+  width: 100%;
+  max-width: 220px;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+  border: 1px solid rgb(118, 205, 236);
+  border-radius: 5px;
+  background-color: rgb(251, 254, 255);
+  color: black;
+}
+
+.diffButtons:hover {
+  background-color: rgb(156, 218, 240);
+  transition: 200ms;
+}
+
+#resultsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+
+}
+
+.resultsLink {
+  text-decoration: none;
+  border: thin solid black;
+  padding: 10px;
+  background-color: rgb(156, 218, 240);
+  color: black;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+.resultsLink:hover {
+  background-color: rgb(186, 229, 245);
+  text-decoration: line-through;
+  transition: 250ms;
+}
+
+.questionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 30px;
+  max-width: 900px;
+  margin-bottom: 15px;
+  border: thin solid black;
+  box-shadow: 1px 1px 8px #b4b4b4;
+  background-color: rgb(241, 247, 248);
+  border-radius: 5px;
+}
+
+#question {
+  text-align: center;
+  max-width: 600px;
+  font-family: 'Roboto Mono', monospace;
+  line-height: 25px;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+#keyboardContainer {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 30px;
+  max-width: 900px;
+  margin-bottom: 15px;
+  border: thin solid black;
+  box-shadow: 1px 1px 8px #b4b4b4;
+  background-color: rgb(241, 247, 248);
+  border-radius: 5px;
+}
+
+#keyboardButtons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.keyboardButtons {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  margin: 0 10px 10px 0;
+  border-radius: 5px;
+  border: 1px solid rgb(118, 205, 236);
+  color: black;
+  background-color: rgb(251, 254, 255);
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.keyboardButtons:hover {
+  background-color: rgb(156, 218, 240);
+  transition: 200ms;
+}
+
 
 .catContainer {
   display: block;
-  margin: 0 auto;
-  border: 2px solid black;
+  margin: 25px auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100%;
+  background-color: rgb(241, 247, 248);
+  box-shadow: 1px 1px 8px #b4b4b4;
+
 }
 
 #octocat {

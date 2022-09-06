@@ -4,25 +4,29 @@
   <title>HanGit</title>
   <link rel="stylesheet" href="reset.css" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+  </style>
 </head>
 <body>
   <header>
-    <img src="https://via.placeholder.com/50" alt="HanGit Logo">
-    <h1>HanGit</h1>
-    <nav>
-      <div>
+    <div id="headerDiv">
+      <img src="./assets/img/fullImage.png" alt="HanGit Logo" class="headerImg">
+      <h1>HanGit</h1>
+      <div id="buttonDiv">
         <button type="submit" class="diffButtons" id="easy">Easy</button>
         <button type="submit" class="diffButtons" id="medium">Medium</button>
         <button type="submit" class="diffButtons" id="hard">Hard</button>
       </div>
-      <div>
-        <a href="results.html">Results</a></li>
-      </div>
-    </nav>
+    </div>
+    <div id="resultsDiv">
+      <a href="results.html" class="resultsLink">Results</a></li>
+    </div>
   </header>
   <main>
     <div class="questionContainer">
-      <p id="question">This is where the question will be displayed.</p>
+      <p id="question">I have completed my work and committed on my branch then switched to the main branch, what command would I run to add
+      my branch to main?</p>
     </div>
     <div id="keyboardContainer">
       <div id="keyboardButtons"></div>
