@@ -74,7 +74,7 @@ hardButtonId.addEventListener('click', buttonClick);
 resetButtonId.addEventListener('click', buttonClick);
 
 //makes the alphabet buttons
-function generateKeybord() {
+function generateKeyboard() {
   const buttonsHTML = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','.','-'];
   while (buttonsHTML.length > 0) {
     let spliced = buttonsHTML.shift();
@@ -83,19 +83,13 @@ function generateKeybord() {
     createButton.innerHTML = spliced;
     letterDisplay.append(createButton);
     createButton.classList.add('keyboardButtons');
-    answerDisplay.appendChild(createButton);
+    container.appendChild(createButton);
     let alphaButtonId = document.getElementById(spliced);
     alphaButtonId.addEventListener('click', buttonClick);
   }
 }
-function handleClick(event) {
-  const isButton = event.target.nodeName === 'BUTTON';
-  if (isButton) {
-    const buttonId = document.getElementById(event.target.id);
-    buttonId.classList.add('selected');
-  }
-  return;
-}
+
+
 function eQuestionAndAnswer(){
   for (let i = 0; i < eQuestion.length; i++){
     let generateEQ = document.getElementById('question');
@@ -128,11 +122,9 @@ function answerContainer() {
   wordDisplay = [];
   // context.clearRect(0, 0, 400, 400);
   // canvas();
-  livesDisplay.innerHTML = `You have ${clickRemaining} lives!`;
+  livesDisplay.innerText = `You have ${clickRemaining} lives!`;
   eQuestionAndAnswer();
-  container.innerHTML = generateKeybord();
-  container.addEventListener('click', handleClick);
-
+  generateKeyboard();
 }
 
 window.onload = answerContainer();
