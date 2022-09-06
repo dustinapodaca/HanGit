@@ -74,7 +74,7 @@ hardButtonId.addEventListener('click', buttonClick);
 resetButtonId.addEventListener('click', buttonClick);
 
 //makes the alphabet buttons
-function generateKeybord(){
+function generateKeybord() {
   const buttonsHTML = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','.','-'];
   while (buttonsHTML.length > 0) {
     let spliced = buttonsHTML.shift();
@@ -82,11 +82,12 @@ function generateKeybord(){
     createButton.id = spliced;
     createButton.innerHTML = spliced;
     letterDisplay.append(createButton);
+    createButton.classList.add('keyboardButtons');
+    answerDisplay.appendChild(createButton);
     let alphaButtonId = document.getElementById(spliced);
     alphaButtonId.addEventListener('click', buttonClick);
   }
 }
-
 function handleClick(event) {
   const isButton = event.target.nodeName === 'BUTTON';
   if (isButton) {
