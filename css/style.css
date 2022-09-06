@@ -4,7 +4,7 @@ body {
   margin: 0 auto;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   max-width: 900px;
-  background-color: rgb(213, 238, 248);
+  background: linear-gradient(110deg, rgb(184, 229, 246) 60%, rgb(213, 238, 248) 60%);
 }
 
 header {
