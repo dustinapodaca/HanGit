@@ -7,8 +7,9 @@ let winningCheck = '';
 let answerDisplay = document.getElementById('letterDisplay');
 let livesDisplay = document.getElementById('clicks');
 let keyContainer = document.getElementById('keyboardButtons');
+let y = 0;
 const canvas = document.getElementById('octocat');
-canvas.getContext('2d');
+// canvas.getContext('2d');
 
 const eQuestion = [
   'I need to stage my files in order to make them available in git hub, what is the first command would I run ? ',
@@ -64,17 +65,17 @@ function buttonClick () {
   console.log('yes');
 }
 
-let easyButtonId = document.getElementById('easy');
-let mediumButtonId = document.getElementById('medium');
-let hardButtonId = document.getElementById('hard');
-let resetButtonId = document.getElementById('reset');
-let letterDisplay = document.getElementById('letterDisplay');
+// let easyButtonId = document.getElementById('easy');
+// let mediumButtonId = document.getElementById('medium');
+// let hardButtonId = document.getElementById('hard');
+// let resetButtonId = document.getElementById('reset');
+// let letterDisplay = document.getElementById('letterDisplay');
 
 
-easyButtonId.addEventListener('click', buttonClick);
-mediumButtonId.addEventListener('click', buttonClick);
-hardButtonId.addEventListener('click', buttonClick);
-resetButtonId.addEventListener('click', buttonClick);
+// easyButtonId.addEventListener('click', buttonClick);
+// mediumButtonId.addEventListener('click', buttonClick);
+// hardButtonId.addEventListener('click', buttonClick);
+// resetButtonId.addEventListener('click', buttonClick);
 
 //makes the alphabet buttons
 function generateKeyboard() {
@@ -175,17 +176,17 @@ function guess(event) {
       } else if (clickRemaining === 1) {
         livesDisplay.innerHTML = `You have ${clickRemaining} life!`;
       } else {
-        livesDisplay.innerHTML = 'Uh Oh, GitConflict!';
+        livesDisplay.innerHTML = 'Uh Oh, GitConflict! Try again!';
       }
     } else {
       return;
     }
     if (answer === winningCheck) {
-      livesDisplay.innerHTML = 'You GitIt!';
+      livesDisplay.innerHTML = `You GitIt! "${answer}" is correct!`;
       x++;
-      let toStore = x;
-      console.log(toStore);
-      localStorage.setItem('toStore', JSON.stringify(toStore));
+      y = x;
+      console.log(y);
+      localStorage.setItem('toStore', JSON.stringify(y));
       eQuestionAndAnswer();
       return;
     }
@@ -194,7 +195,7 @@ function guess(event) {
 generateKeyboard();
 answerContainer();
 
-
+// Individual Functions for OctoCat Animation on Canvas
 const nooseDisplay = function () {
   const canvas = document.getElementById('octocat');
   const context = canvas.getContext('2d');
@@ -284,73 +285,25 @@ const puddle = function () {
   }
 };
 
-
-
+//Calling OctoCat functions from array by Clicks Remaining
 function animateCat() {
   (drawArray[clickRemaining]());
 }
 
+//Functions Array for OctoCat
 let drawArray = [puddle, fifthArm, fourthArm, thirdArm, secondArm, firstArm, head, nooseDisplay];
 
-// chart.js
-
-// function displayChart() {
-
-//   let ctx = document.getElementById('resultsChart').getContext('2d');
-
-
-//   let labels = [];
-//   let answersCorrect = {
-//     label: 'Correct Answers',
-//     data: [],
-//     backgroundColor: ['rgba(128, 57, 26, 0.8)']
-//   };
-
-//   let clicksLeft = {
-//     label: 'Clicks Remaining',
-//     data: [],
-//     backgroundColor: ['rgba(29, 29, 2, 0.8)']
-//   };
-
-//   //loop
-//   for (let i = 0; i < answerContainer.length; i++) {
-//     let response = answerContainer[i];
-
-//     // labels[i] = product.name;
-//     answersCorrect.data[i] = response.clicks;
-//     clicksLeft.data[i] = response.views;
-//   }
-
-//   let chart = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//       labels: labels,
-//       datasets: [
-//         answersCorrect,
-//         clicksLeft,
-//       ],
-//     },
-//     options: {
-//       scales: {
-//         y: {
-//           beginAtZero: true,
-//         },
-//       },
-//     },
-//   });
-
-// }
-
+//PARSE LOCAL STORAGE
 let storedAnswers = localStorage.getItem('toStore');
 if (storedAnswers) {
-  x = JSON.parse(storedAnswers);
+  y = JSON.parse(storedAnswers);
 }
 
+//RESET BUTTON for LOCAL STORAGE and GAME
 function reset(){
   localStorage.clear();
   document.location.reload();
 }
-
+// Event Listener for RESET BUTTON
 let resetButton = document.getElementById('reset');
-
 resetButton.addEventListener('click', reset);
