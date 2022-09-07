@@ -195,6 +195,7 @@ h1 {
   border-radius: 5px;
   margin-left: 2px;
   font-weight: 300;
+  cursor: default;
 }
 
 #clicks {
@@ -244,10 +245,9 @@ h1 {
   letter-spacing: -3px;
   margin: 0 auto;
   text-align: center;
-  text-shadow: 2px 2px 2px black;
+  text-shadow: 2px 2px 1px black;
   color: rgb(246, 242, 234);
-
-  
+  cursor: default;
 }
 
 .catContainer {
