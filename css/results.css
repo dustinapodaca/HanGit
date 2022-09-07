@@ -5,10 +5,7 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   max-width: 900px;
   background: linear-gradient(110deg, rgb(184, 229, 246) 60%, rgb(213, 238, 248) 60%);
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+
 }
 
 header {
