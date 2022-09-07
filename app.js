@@ -4,7 +4,6 @@ let wordDisplay = [];
 let answer = '';
 let clickRemaining = 8;
 let winningCheck = '';
-let resetGame = document.getElementById('reset');
 let answerDisplay = document.getElementById('letterDisplay');
 let livesDisplay = document.getElementById('clicks');
 let keyContainer = document.getElementById('keyboardButtons');
@@ -184,6 +183,9 @@ function guess(event) {
     if (answer === winningCheck) {
       livesDisplay.innerHTML = 'You GitIt!';
       x++;
+      let toStore = x;
+      console.log(toStore);
+      localStorage.setItem('toStore', JSON.stringify(toStore));
       eQuestionAndAnswer();
       return;
     }
@@ -192,7 +194,6 @@ function guess(event) {
 generateKeyboard();
 answerContainer();
 
-resetGame.addEventListener('click', answerContainer);
 
 const nooseDisplay = function () {
   const canvas = document.getElementById('octocat');
@@ -340,11 +341,16 @@ let drawArray = [puddle, fifthArm, fourthArm, thirdArm, secondArm, firstArm, hea
 
 // }
 
-// let storedAnswers = localStorage.getItem('toStore');
-// console.log(storedAnswers);
-// if (storedAnswers) {
-//   storedAnswers = JSON.parse(storedAnswers);
-// }
-// console.log(storedAnswers);
+let storedAnswers = localStorage.getItem('toStore');
+if (storedAnswers) {
+  x = JSON.parse(storedAnswers);
+}
 
+function reset(){
+  localStorage.clear();
+  document.location.reload();
+}
 
+let resetButton = document.getElementById('reset');
+
+resetButton.addEventListener('click', reset);
