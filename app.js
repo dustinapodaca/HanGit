@@ -341,23 +341,23 @@ function displayChart() {
   const myChart = new Chart(canvasChart, chartGraphics);
 }
 
-// LOCAL STORAGE STRINGIFY----------------------------------------------------------------
-// const stringData = JSON.stringify(Product.allProductsArray);
-const stringData = Product.allProductsArray;
-// console.log('stringified products >>>', stringData);
-// LOCAL STORAGE SETITEM --------------------------------------------------------------
-localStorage.setItem('stringData', JSON.stringify(stringData));
-generateRandomPicture();
+// // LOCAL STORAGE STRINGIFY----------------------------------------------------------------
+// // const stringData = JSON.stringify(Product.allProductsArray);
+// const stringData = Product.allProductsArray;
+// // console.log('stringified products >>>', stringData);
+// // LOCAL STORAGE SETITEM --------------------------------------------------------------
+// localStorage.setItem('stringData', JSON.stringify(stringData));
+// generateRandomPicture();
 
 
-// LOCAL STORAGE RETREVIAL -------------------------------------------------
-const storedProducts = localStorage.getItem('stringData');
-if (storedProducts) {
-  Product.allProductsArray = JSON.parse(storedProducts);
-}
-// console.log('storedProducts', storedProducts);
-// const parsedProducts = JSON.parse(storedProducts);
-// console.log('parsed Products >>>', parsedProducts);
-console.log(storedProducts);
+// // LOCAL STORAGE RETREVIAL -------------------------------------------------
+// const storedProducts = localStorage.getItem('stringData');
+// if (storedProducts) {
+//   Product.allProductsArray = JSON.parse(storedProducts);
+// }
+// // console.log('storedProducts', storedProducts);
+// // const parsedProducts = JSON.parse(storedProducts);
+// // console.log('parsed Products >>>', parsedProducts);
+// console.log(storedProducts);
 
-generateRandomPicture();
+// generateRandomPicture();
