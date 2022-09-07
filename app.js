@@ -138,11 +138,6 @@ function answerContainer() {
   eQuestionAndAnswer();
 }
 
-
-
-
-
-
 function guess(event) {
   const guessWord = event.target.id;
   const answerArray = answer.split('');
