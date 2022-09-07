@@ -4,7 +4,6 @@ let wordDisplay = [];
 let answer = '';
 let clickRemaining = 8;
 let winningCheck = '';
-let resetGame = document.getElementById('reset');
 let answerDisplay = document.getElementById('letterDisplay');
 let livesDisplay = document.getElementById('clicks');
 let keyContainer = document.getElementById('keyboardButtons');
@@ -107,7 +106,7 @@ let x = 0;
 
 function eQuestionAndAnswer(){
   let generateEQ = document.getElementById('question');
-  if (eQuestion[x] == undefined) {
+  if (eQuestion[x] === undefined) {
     generateEQ.innerText= 'Nice job!, now try out the other difficulties!';
     return;
   }
@@ -184,6 +183,9 @@ function guess(event) {
     if (answer === winningCheck) {
       livesDisplay.innerHTML = 'You GitIt!';
       x++;
+      let toStore = x;
+      console.log(toStore);
+      localStorage.setItem('toStore', JSON.stringify(toStore));
       eQuestionAndAnswer();
       return;
     }
@@ -192,7 +194,6 @@ function guess(event) {
 generateKeyboard();
 answerContainer();
 
-resetGame.addEventListener('click', answerContainer);
 
 const nooseDisplay = function () {
   const canvas = document.getElementById('octocat');
@@ -283,6 +284,8 @@ const puddle = function () {
   }
 };
 
+
+
 function animateCat() {
   (drawArray[clickRemaining]());
 }
@@ -291,73 +294,63 @@ let drawArray = [puddle, fifthArm, fourthArm, thirdArm, secondArm, firstArm, hea
 
 // chart.js
 
-function displayChart() {
-  let productNames = [];
-  let productClicks = [];
-  let productViews = [];
+// function displayChart() {
 
-  for (let i = 0; i < Product.allProductsArray.length; i++) {
-    productNames.push(Product.allProductsArray[i].name);
-    productClicks.push(Product.allProductsArray[i].clicks);
-    productViews.push(Product.allProductsArray[i].views);
-  }
+//   let ctx = document.getElementById('resultsChart').getContext('2d');
 
-  const chartGraphics = {
-    type: 'bar',
-    data: {
-      labels: productNames,
-      datasets: [{
-        label: 'Number of Votes',
-        data: productClicks,
-        backgroundColor: [
-          'rgb(255, 253, 185)',
-        ],
-        borderColor: [
-          'rgb(236, 177, 156)'
-        ],
-        borderWidth: 1
-      },
-      {
-        label: 'Number of Views',
-        data: productViews,
-        backgroundColor: [
-          'rgb(236, 177, 156)'
-        ],
-        borderColor: [
-          'rgb(224, 150, 123)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  };
-  let canvasChart = document.getElementById('resultsChart').getContext('2d');
-  const myChart = new Chart(canvasChart, chartGraphics);
+
+//   let labels = [];
+//   let answersCorrect = {
+//     label: 'Correct Answers',
+//     data: [],
+//     backgroundColor: ['rgba(128, 57, 26, 0.8)']
+//   };
+
+//   let clicksLeft = {
+//     label: 'Clicks Remaining',
+//     data: [],
+//     backgroundColor: ['rgba(29, 29, 2, 0.8)']
+//   };
+
+//   //loop
+//   for (let i = 0; i < answerContainer.length; i++) {
+//     let response = answerContainer[i];
+
+//     // labels[i] = product.name;
+//     answersCorrect.data[i] = response.clicks;
+//     clicksLeft.data[i] = response.views;
+//   }
+
+//   let chart = new Chart(ctx, {
+//     type: 'bar',
+//     data: {
+//       labels: labels,
+//       datasets: [
+//         answersCorrect,
+//         clicksLeft,
+//       ],
+//     },
+//     options: {
+//       scales: {
+//         y: {
+//           beginAtZero: true,
+//         },
+//       },
+//     },
+//   });
+
+// }
+
+let storedAnswers = localStorage.getItem('toStore');
+if (storedAnswers) {
+  x = JSON.parse(storedAnswers);
 }
 
-// // LOCAL STORAGE STRINGIFY----------------------------------------------------------------
-// // const stringData = JSON.stringify(Product.allProductsArray);
-// const stringData = Product.allProductsArray;
-// // console.log('stringified products >>>', stringData);
-// // LOCAL STORAGE SETITEM --------------------------------------------------------------
-// localStorage.setItem('stringData', JSON.stringify(stringData));
-// generateRandomPicture();
+function reset(){
+  localStorage.clear();
+  document.location.reload();
+}
 
+let resetButton = document.getElementById('reset');
 
-// // LOCAL STORAGE RETREVIAL -------------------------------------------------
-// const storedProducts = localStorage.getItem('stringData');
-// if (storedProducts) {
-//   Product.allProductsArray = JSON.parse(storedProducts);
-// }
-// // console.log('storedProducts', storedProducts);
-// // const parsedProducts = JSON.parse(storedProducts);
-// // console.log('parsed Products >>>', parsedProducts);
-// console.log(storedProducts);
-
-// generateRandomPicture();
+resetButton.addEventListener('click', reset);
