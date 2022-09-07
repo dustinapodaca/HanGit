@@ -148,7 +148,7 @@ function guess(event) {
   const answerArray = answer.split('');
   let counter = 0;
   if (answer === winningCheck) {
-    livesDisplay.innerHTML = 'You GitIt!';
+    livesDisplay.innerHTML = `${answer} is correct!`;
     x++;
     eQuestionAndAnswer();
     return;
@@ -173,7 +173,7 @@ function guess(event) {
       if (clickRemaining > 1) {
         livesDisplay.innerHTML = `You have ${clickRemaining} lives!`;
       } else if (clickRemaining === 1) {
-        livesDisplay.innerHTML = `You have ${clickRemaining} life!`;
+        livesDisplay.innerHTML = `You have ${clickRemaining} lives!`;
       } else {
         livesDisplay.innerHTML = 'Uh Oh, GitConflict!';
       }
@@ -181,7 +181,7 @@ function guess(event) {
       return;
     }
     if (answer === winningCheck) {
-      livesDisplay.innerHTML = 'You GitIt!';
+      livesDisplay.innerHTML = `${answer} is correct!`;
       x++;
       let toStore = x;
       console.log(toStore);
@@ -193,6 +193,7 @@ function guess(event) {
 }
 generateKeyboard();
 answerContainer();
+
 
 
 const nooseDisplay = function () {
@@ -294,52 +295,52 @@ let drawArray = [puddle, fifthArm, fourthArm, thirdArm, secondArm, firstArm, hea
 
 // chart.js
 
-// function displayChart() {
+function displayChart() {
 
-//   let ctx = document.getElementById('resultsChart').getContext('2d');
+  let ctx = document.getElementById('resultsChart').getContext('2d');
 
 
-//   let labels = [];
-//   let answersCorrect = {
-//     label: 'Correct Answers',
-//     data: [],
-//     backgroundColor: ['rgba(128, 57, 26, 0.8)']
-//   };
+  let labels = [];
+  let answersCorrect = {
+    label: ' # ofCorrect Answers',
+    data: [],
+    backgroundColor: ['rgba(128, 57, 26, 0.8)']
+  };
 
-//   let clicksLeft = {
-//     label: 'Clicks Remaining',
-//     data: [],
-//     backgroundColor: ['rgba(29, 29, 2, 0.8)']
-//   };
+  // let clicksLeft = {
+  //   label: 'Clicks Remaining',
+  //   data: [],
+  //   backgroundColor: ['rgba(29, 29, 2, 0.8)']
+  // };
 
-//   //loop
-//   for (let i = 0; i < answerContainer.length; i++) {
-//     let response = answerContainer[i];
+  //loop
+  for (let i = 0; i < x.length; i++) {
+    let response = x[i];
 
-//     // labels[i] = product.name;
-//     answersCorrect.data[i] = response.clicks;
-//     clicksLeft.data[i] = response.views;
-//   }
 
-//   let chart = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//       labels: labels,
-//       datasets: [
-//         answersCorrect,
-//         clicksLeft,
-//       ],
-//     },
-//     options: {
-//       scales: {
-//         y: {
-//           beginAtZero: true,
-//         },
-//       },
-//     },
-//   });
+    answersCorrect.data[i] = response.clicks;
+    // clicksLeft.data[i] = response.views;
+  }
 
-// }
+  let chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        answersCorrect,
+        // clicksLeft,
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+
+}
 
 let storedAnswers = localStorage.getItem('toStore');
 if (storedAnswers) {
@@ -354,3 +355,4 @@ function reset(){
 let resetButton = document.getElementById('reset');
 
 resetButton.addEventListener('click', reset);
+
