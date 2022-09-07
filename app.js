@@ -107,13 +107,19 @@ let x = 0;
 
 function eQuestionAndAnswer(){
   let generateEQ = document.getElementById('question');
+  if (eQuestion[x] === undefined) {
+    generateEQ.innerText= 'Nice job!, now try out the other difficulties!';
+    return;
+  }
   generateEQ.innerText= eQuestion[x];
   console.log(eQuestion[x]);
   answer = eAnswer[x];
+  answerDisplay.classList.add('wordDisplay');
   answerDisplay.innerText = generateAnswerDisplay(answer);
   console.log(answer);
   keyContainer.addEventListener('click', guess);
 }
+
 
 function generateAnswerDisplay(word) {
   wordDisplay = [];
@@ -186,6 +192,7 @@ function guess(event) {
 generateKeyboard();
 answerContainer();
 
+resetGame.addEventListener('click', answerContainer);
 
 const nooseDisplay = function () {
   const canvas = document.getElementById('octocat');
@@ -284,5 +291,60 @@ function animateCat() {
 
 let drawArray = [puddle, fifthArm, fourthArm, thirdArm, secondArm, firstArm, head, nooseDisplay];
 
-resetGame.addEventListener('click', answerContainer);
+// chart.js
+
+// function displayChart() {
+
+//   let ctx = document.getElementById('resultsChart').getContext('2d');
+
+
+//   let labels = [];
+//   let answersCorrect = {
+//     label: 'Correct Answers',
+//     data: [],
+//     backgroundColor: ['rgba(128, 57, 26, 0.8)']
+//   };
+
+//   let clicksLeft = {
+//     label: 'Clicks Remaining',
+//     data: [],
+//     backgroundColor: ['rgba(29, 29, 2, 0.8)']
+//   };
+
+//   //loop
+//   for (let i = 0; i < answerContainer.length; i++) {
+//     let response = answerContainer[i];
+
+//     // labels[i] = product.name;
+//     answersCorrect.data[i] = response.clicks;
+//     clicksLeft.data[i] = response.views;
+//   }
+
+//   let chart = new Chart(ctx, {
+//     type: 'bar',
+//     data: {
+//       labels: labels,
+//       datasets: [
+//         answersCorrect,
+//         clicksLeft,
+//       ],
+//     },
+//     options: {
+//       scales: {
+//         y: {
+//           beginAtZero: true,
+//         },
+//       },
+//     },
+//   });
+
+// }
+
+// let storedAnswers = localStorage.getItem('toStore');
+// console.log(storedAnswers);
+// if (storedAnswers) {
+//   storedAnswers = JSON.parse(storedAnswers);
+// }
+// console.log(storedAnswers);
+
 
