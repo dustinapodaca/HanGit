@@ -61,7 +61,8 @@ h1 {
 
 .diffButtons:hover {
   background-color: rgb(156, 218, 240);
-  transition: 200ms;
+  color: white;
+  transition: 300ms;
 }
 
 #resultsDiv {
@@ -78,15 +79,16 @@ h1 {
   border: thin solid black;
   padding: 10px;
   background-color: rgb(156, 218, 240);
-  color: black;
+  color: white;
   font-weight: 200;
   font-size: 18px;
 }
 
 .resultsLink:hover {
   background-color: rgb(186, 229, 245);
-  text-decoration: line-through;
-  transition: 250ms;
+  color: black;
+  /* text-decoration: line-through; */
+  transition: 300ms;
 }
 
 .questionContainer {
@@ -161,10 +163,10 @@ h1 {
   transition: 300ms;
 }
 
-.selected {
+/* .selected {
   background-color: rgb(156, 218, 240);
   color: white;
-}
+} */
 
 .counterDiv {
   display: flex;
@@ -194,12 +196,13 @@ h1 {
 }
 
 .wordDisplay {
-  font-size: 35px;
+  font-size: 40px;
+  font-weight: 300;
   font-family: 'Roboto Mono', monospace;
   letter-spacing: -3px;
   margin: 0 auto;
   text-align: center;
-  text-shadow: 2px 2px 1px black;
+  text-shadow: 2px 2px 2px black;
   color: rgb(246, 242, 234);
 
   

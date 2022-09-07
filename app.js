@@ -106,19 +106,19 @@ function handleClick(event) {
 let x = 0;
 
 function eQuestionAndAnswer(){
-    let generateEQ = document.getElementById('question');
-    if (eQuestion[x] == undefined) {
-      generateEQ.innerText= 'Nice job!, now try out the other difficulties!';
-      return;
-    }
-    generateEQ.innerText= eQuestion[x];
-    console.log(eQuestion[x]);
-    answer = eAnswer[x];
-    answerDisplay.classList.add('wordDisplay');
-    answerDisplay.innerText = generateAnswerDisplay(answer);
-    console.log(answer);
-    keyContainer.addEventListener('click', guess);
+  let generateEQ = document.getElementById('question');
+  if (eQuestion[x] == undefined) {
+    generateEQ.innerText= 'Nice job!, now try out the other difficulties!';
+    return;
   }
+  generateEQ.innerText= eQuestion[x];
+  console.log(eQuestion[x]);
+  answer = eAnswer[x];
+  answerDisplay.classList.add('wordDisplay');
+  answerDisplay.innerText = generateAnswerDisplay(answer);
+  console.log(answer);
+  keyContainer.addEventListener('click', guess);
+}
 
 
 function generateAnswerDisplay(word) {

@@ -53,15 +53,16 @@ h1 {
   border: thin solid black;
   padding: 10px;
   background-color: rgb(156, 218, 240);
-  color: black;
+  color: white;
   font-weight: 200;
   font-size: 18px;
 }
 
 .homeLink:hover {
   background-color: rgb(186, 229, 245);
-  text-decoration: line-through;
-  transition: 250ms;
+  color: black;
+  /* text-decoration: line-through; */
+  transition: 300ms;
 }
 
 .resultsHeader {
