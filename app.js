@@ -8,7 +8,8 @@ let resetGame = document.getElementById('reset');
 let answerDisplay = document.getElementById('letterDisplay');
 let livesDisplay = document.getElementById('clicks');
 let keyContainer = document.getElementById('keyboardButtons');
-// let resetButton = document.getElementById('reset');
+const canvas = document.getElementById('octocat');
+canvas.getContext('2d');
 
 const eQuestion = [
   'I need to stage my files in order to make them available in git hub, what is the first command would I run ? ',
@@ -59,6 +60,7 @@ const eAnswer = [
 // ];
 
 
+
 function buttonClick () {
   console.log('yes');
 }
@@ -103,7 +105,7 @@ function handleClick(event) {
 
 function eQuestionAndAnswer(){
   for (let i = 0; i < eQuestion.length; i++){
-    console.log('we are here');
+
     let generateEQ = document.getElementById('question');
     generateEQ.innerText= eQuestion[i];
     console.log(eQuestion[i]);
@@ -131,8 +133,6 @@ function generateAnswerDisplay(word) {
 function answerContainer() {
   clickRemaining = 8;
   wordDisplay = [];
-  // context.clearRect(0, 0, 400, 400);
-  // canvas();
   livesDisplay.innerText = `You have ${clickRemaining} lives!`;
   keyContainer.addEventListener('click', handleClick);
   eQuestionAndAnswer();
@@ -143,7 +143,7 @@ function guess(event) {
   const answerArray = answer.split('');
   let counter = 0;
   if (answer === winningCheck) {
-    livesDisplay.innerHTML = 'YOU WIN!';
+    livesDisplay.innerHTML = 'You GitIt!';
     return;
   } else {
     if (clickRemaining > 0) {
@@ -153,91 +153,36 @@ function guess(event) {
           console.log(guessWord);
           answerDisplay.innerHTML = wordDisplay.join(' ');
           winningCheck = wordDisplay.join('');
-          //console.log(winningCheck)
           counter += 1;
         }
       }
       if (counter === 0) {
         clickRemaining -= 1;
         counter = 0;
-        // animate();
+        animateCat();
       } else {
         counter = 0;
       }
       if (clickRemaining > 1) {
-        console.log('im here');
         livesDisplay.innerHTML = `You have ${clickRemaining} lives!`;
       } else if (clickRemaining === 1) {
         livesDisplay.innerHTML = `You have ${clickRemaining} life!`;
       } else {
-        livesDisplay.innerHTML = 'GAME OVER!';
+        livesDisplay.innerHTML = 'Uh Oh, GitConflict!';
       }
     } else {
       return;
     }
     if (answer === winningCheck) {
-      livesDisplay.innerHTML = 'YOU WIN!';
+      livesDisplay.innerHTML = 'You GitIt!';
       return;
     }
   }
 }
 generateKeyboard();
 answerContainer();
-//canvas Hangman Images
 
-// const canvas = document.getElementById('octocat');
-// const context = canvas.getContext('2d');
-// const noose = new Image(); {
-//   noose.src = './assets/img/noose.png';
-//   noose.onload = () => {
-//     context.drawImage(noose, 0, 0, 1200, 950);
-//   };
-//   const head = new Image(); {
-//     head.src = './assets/img/head.png';
-//     head.onload = () => {
-//       context.drawImage(head, 0, 0, 1200, 950);
-//     };
-//     const firstArm = new Image(); {
-//       firstArm.src = './assets/img/firstArm.png';
-//       firstArm.onload = () => {
-//         context.drawImage(firstArm, 0, 0, 1200, 950);
-//       };
-//       const secondArm = new Image(); {
-//         secondArm.src = './assets/img/secondArm.png';
-//         secondArm.onload = () => {
-//           context.drawImage(secondArm, 0, 0, 1200, 950);
-//         };
-//         const thirdArm = new Image(); {
-//           thirdArm.src = './assets/img/thirdArm.png';
-//           thirdArm.onload = () => {
-//             context.drawImage(thirdArm, 0, 0, 1200, 950);
-//           };
-//           const fourthArm = new Image(); {
-//             fourthArm.src = './assets/img/fourthArm.png';
-//             fourthArm.onload = () => {
-//               context.drawImage(fourthArm, 0, 0, 1200, 950);
-//             };
-//             const fifthArm = new Image(); {
-//               fifthArm.src = './assets/img/fifthArm.png';
-//               fifthArm.onload = () => {
-//                 context.drawImage(fifthArm, 0, 0, 1200, 950);
-//               };
-//               const puddle = new Image(); {
-//                 puddle.src = './assets/img/puddle.png';
-//                 puddle.onload = () => {
-//                   context.drawImage(puddle, 0, 0, 1200, 950);
-//                 };
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-
-// Hangman OctoCat
+resetGame.addEventListener('click', answerContainer);
 
 const nooseDisplay = function () {
   const canvas = document.getElementById('octocat');
@@ -328,27 +273,8 @@ const puddle = function () {
   }
 };
 
+function animateCat() {
+  (drawArray[clickRemaining]());
+}
+
 let drawArray = [puddle, fifthArm, fourthArm, thirdArm, secondArm, firstArm, head, nooseDisplay];
-
-
-// let animateCat = function () {
-//   let clickCount = clickRemaining;
-//   drawArray[7]();
-//   drawArray[6]();
-// };
-
-// Animate Cat
-let animateCat = function () {
-  // console.log(drawArray[clickRemaining]);
-  for (let i = 0; i < drawArray.length; i++) {
-    drawArray[i]();
-  }
-  // drawArray[7]();
-  // drawArray[clickRemaining]();
-  // let drawMe = clickRemaining;
-};
-
-animateCat();
-
-// const drawArray = [catDisplay, head, firstArm, secondArm, thirdArm, fourthArm, fifthArm, puddle];
-
