@@ -56,13 +56,14 @@ h1 {
   border: 1px solid rgb(118, 205, 236);
   border-radius: 5px;
   background-color: rgb(251, 254, 255);
+  transition: 300ms;
   color: black;
 }
 
 .diffButtons:hover {
   background-color: rgb(156, 218, 240);
   color: white;
-  transition: 300ms;
+  cursor: pointer;
 }
 
 #resultsDiv {
@@ -77,18 +78,19 @@ h1 {
 .resultsLink {
   text-decoration: none;
   border: thin solid black;
+  border-radius: 5px;  
   padding: 10px;
   background-color: rgb(156, 218, 240);
   color: white;
   font-weight: 200;
   font-size: 18px;
+  transition: 300ms;
 }
 
 .resultsLink:hover {
   background-color: rgb(186, 229, 245);
   color: black;
   /* text-decoration: line-through; */
-  transition: 300ms;
 }
 
 .questionContainer {
@@ -154,13 +156,14 @@ h1 {
   font-family: 'Roboto Mono', monospace;
   font-weight: 300;
   font-size: 18px;
+  transition: 300ms;
 }
 
 .keyboardButtons:hover {
   background-color: rgb(156, 218, 240);
   /* box-shadow: 1px 1px 4px rgb(60, 113, 133); */
   color: white;
-  transition: 300ms;
+  cursor: pointer;
 }
 
 /* .selected {
@@ -181,6 +184,45 @@ h1 {
   box-shadow: 1px 1px 8px #b4b4b4;
   background-color: rgb(241, 247, 248);
   border-radius: 5px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.pClicks {
+  padding: 8px;
+  background-color: rgb(156, 218, 240);
+  color: white;
+  border: thin solid black;
+  border-radius: 5px;
+  margin-left: 2px;
+  font-weight: 300;
+}
+
+#clicks {
+  font-size: 19px;
+  font-weight: 400;
+  text-shadow: 1px 1px 0px rgb(0, 0, 0);
+}
+
+
+.resetButton {
+  margin: 6px auto;
+  padding: 5px 10px;
+  width: 100%;
+  max-width: 240px;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+  border: 2px solid rgb(118, 205, 236);
+  border-radius: 5px;
+  background-color: rgb(251, 254, 255);
+  color: black;
+  transition: 300ms;
+}
+
+.resetButton:hover {
+  background-color: rgb(156, 218, 240);
+  color: white;
+  cursor: pointer;
 }
 
 #letterDisplay {
