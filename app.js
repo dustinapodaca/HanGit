@@ -2,7 +2,9 @@
 
 let wordDisplay = [];
 let answer = '';
-let clickRemaining = 7;
+let clickRemaining = 8;
+let winningCheck = '';
+let resetGame = document.getElementById('reset');
 let answerDisplay = document.getElementById('letterDisplay');
 let livesDisplay = document.getElementById('clicks');
 let keyContainer = document.getElementById('keyboardButtons');
@@ -101,13 +103,15 @@ function handleClick(event) {
 
 function eQuestionAndAnswer(){
   for (let i = 0; i < eQuestion.length; i++){
+    console.log('we are here');
     let generateEQ = document.getElementById('question');
-    generateEQ.innerHTML = eQuestion[i];
+    generateEQ.innerText= eQuestion[i];
     console.log(eQuestion[i]);
     answer = eAnswer[i];
-    answerDisplay.innerHTML = generateAnswerDisplay(answer);
+    answerDisplay.innerText = generateAnswerDisplay(answer);
     console.log(answer);
-    break;
+    keyContainer.addEventListener('click', guess);
+    return;
   }
 }
 
@@ -125,18 +129,65 @@ function generateAnswerDisplay(word) {
 }
 
 function answerContainer() {
-  answer = '';
   clickRemaining = 8;
   wordDisplay = [];
   // context.clearRect(0, 0, 400, 400);
   // canvas();
   livesDisplay.innerText = `You have ${clickRemaining} lives!`;
+  keyContainer.addEventListener('click', handleClick);
   eQuestionAndAnswer();
 }
 
-generateKeyboard();
-window.onload = answerContainer();
 
+
+
+
+
+function guess(event) {
+  const guessWord = event.target.id;
+  const answerArray = answer.split('');
+  let counter = 0;
+  if (answer === winningCheck) {
+    livesDisplay.innerHTML = 'YOU WIN!';
+    return;
+  } else {
+    if (clickRemaining > 0) {
+      for (let j = 0; j < answer.length; j++) {
+        if (guessWord === answerArray[j]) {
+          wordDisplay[j] = guessWord;
+          console.log(guessWord);
+          answerDisplay.innerHTML = wordDisplay.join(' ');
+          winningCheck = wordDisplay.join('');
+          //console.log(winningCheck)
+          counter += 1;
+        }
+      }
+      if (counter === 0) {
+        clickRemaining -= 1;
+        counter = 0;
+        // animate();
+      } else {
+        counter = 0;
+      }
+      if (clickRemaining > 1) {
+        console.log('im here');
+        livesDisplay.innerHTML = `You have ${clickRemaining} lives!`;
+      } else if (clickRemaining === 1) {
+        livesDisplay.innerHTML = `You have ${clickRemaining} life!`;
+      } else {
+        livesDisplay.innerHTML = 'GAME OVER!';
+      }
+    } else {
+      return;
+    }
+    if (answer === winningCheck) {
+      livesDisplay.innerHTML = 'YOU WIN!';
+      return;
+    }
+  }
+}
+generateKeyboard();
+answerContainer();
 //canvas Hangman Images
 
 // const canvas = document.getElementById('octocat');
@@ -305,3 +356,4 @@ let animateCat = function () {
 animateCat();
 
 // const drawArray = [catDisplay, head, firstArm, secondArm, thirdArm, fourthArm, fifthArm, puddle];
+
