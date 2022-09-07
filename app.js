@@ -107,6 +107,10 @@ let x = 0;
 
 function eQuestionAndAnswer(){
     let generateEQ = document.getElementById('question');
+    if (eQuestion[x] == undefined) {
+      generateEQ.innerText= 'Nice job!, now try out the other difficulties!';
+      return;
+    }
     generateEQ.innerText= eQuestion[x];
     console.log(eQuestion[x]);
     answer = eAnswer[x];
@@ -116,6 +120,7 @@ function eQuestionAndAnswer(){
   }
 
 function generateAnswerDisplay(word) {
+  wordDisplay = [];
   let answerArray = word.split('');
   console.log(answerArray);
   for (let i = 0; i < answer.length; i++) {
@@ -133,6 +138,7 @@ function answerContainer() {
   wordDisplay = [];
   livesDisplay.innerText = `You have ${clickRemaining} lives!`;
   keyContainer.addEventListener('click', handleClick);
+  x = 0;
   eQuestionAndAnswer();
 }
 
