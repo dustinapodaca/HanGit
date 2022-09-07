@@ -103,19 +103,17 @@ function handleClick(event) {
   return;
 }
 
-function eQuestionAndAnswer(){
-  for (let i = 0; i < eQuestion.length; i++){
+let x = 0;
 
+function eQuestionAndAnswer(){
     let generateEQ = document.getElementById('question');
-    generateEQ.innerText= eQuestion[i];
-    console.log(eQuestion[i]);
-    answer = eAnswer[i];
+    generateEQ.innerText= eQuestion[x];
+    console.log(eQuestion[x]);
+    answer = eAnswer[x];
     answerDisplay.innerText = generateAnswerDisplay(answer);
     console.log(answer);
     keyContainer.addEventListener('click', guess);
-    return;
   }
-}
 
 function generateAnswerDisplay(word) {
   let answerArray = word.split('');
@@ -144,6 +142,8 @@ function guess(event) {
   let counter = 0;
   if (answer === winningCheck) {
     livesDisplay.innerHTML = 'You GitIt!';
+    x++;
+    eQuestionAndAnswer();
     return;
   } else {
     if (clickRemaining > 0) {
@@ -175,6 +175,8 @@ function guess(event) {
     }
     if (answer === winningCheck) {
       livesDisplay.innerHTML = 'You GitIt!';
+      x++;
+      eQuestionAndAnswer();
       return;
     }
   }
