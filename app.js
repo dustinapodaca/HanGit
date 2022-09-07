@@ -138,7 +138,7 @@ function answerContainer() {
   eQuestionAndAnswer();
 }
 
-
+resetGame.addEventListener('click', answerContainer);
 
 
 
