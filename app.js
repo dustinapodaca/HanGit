@@ -106,16 +106,17 @@ function handleClick(event) {
 let x = 0;
 
 function eQuestionAndAnswer(){
-    let generateEQ = document.getElementById('question');
-    generateEQ.innerText= eQuestion[x];
-    console.log(eQuestion[x]);
-    answer = eAnswer[x];
-    answerDisplay.innerText = generateAnswerDisplay(answer);
-    console.log(answer);
-    keyContainer.addEventListener('click', guess);
-  }
+  let generateEQ = document.getElementById('question');
+  generateEQ.innerText= eQuestion[x];
+  console.log(eQuestion[x]);
+  answer = eAnswer[x];
+  answerDisplay.innerText = generateAnswerDisplay(answer);
+  console.log(answer);
+  keyContainer.addEventListener('click', guess);
+}
 
 function generateAnswerDisplay(word) {
+  wordDisplay = [];
   let answerArray = word.split('');
   console.log(answerArray);
   for (let i = 0; i < answer.length; i++) {
@@ -133,6 +134,7 @@ function answerContainer() {
   wordDisplay = [];
   livesDisplay.innerText = `You have ${clickRemaining} lives!`;
   keyContainer.addEventListener('click', handleClick);
+  x = 0;
   eQuestionAndAnswer();
 }
 
@@ -184,7 +186,6 @@ function guess(event) {
 generateKeyboard();
 answerContainer();
 
-resetGame.addEventListener('click', answerContainer);
 
 const nooseDisplay = function () {
   const canvas = document.getElementById('octocat');
@@ -275,8 +276,13 @@ const puddle = function () {
   }
 };
 
+
+
 function animateCat() {
   (drawArray[clickRemaining]());
 }
 
 let drawArray = [puddle, fifthArm, fourthArm, thirdArm, secondArm, firstArm, head, nooseDisplay];
+
+resetGame.addEventListener('click', answerContainer);
+
