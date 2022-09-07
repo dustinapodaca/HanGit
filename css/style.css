@@ -156,7 +156,14 @@ h1 {
 
 .keyboardButtons:hover {
   background-color: rgb(156, 218, 240);
-  transition: 200ms;
+  /* box-shadow: 1px 1px 4px rgb(60, 113, 133); */
+  color: white;
+  transition: 300ms;
+}
+
+.selected {
+  background-color: rgb(156, 218, 240);
+  color: white;
 }
 
 .counterDiv {
@@ -167,7 +174,7 @@ h1 {
   margin: 0 auto;
   padding: 20px;
   max-width: 900px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   border: thin solid black;
   box-shadow: 1px 1px 8px #b4b4b4;
   background-color: rgb(241, 247, 248);
@@ -175,15 +182,27 @@ h1 {
 }
 
 #letterDisplay {
-  border: thin solid black;
+  /* border: thin solid black; */
   max-width: 900px;
   margin: 0 auto;
   display: block;
   height: 55px;
-  margin-bottom: 15px;
-  background-color: rgb(241, 247, 248);
+  /* margin-bottom: 15px; */
+  /* background-color: rgb(241, 247, 248);
   box-shadow: 1px 1px 8px #b4b4b4;
-  border-radius: 5px;
+  border-radius: 5px; */
+}
+
+.wordDisplay {
+  font-size: 35px;
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: -3px;
+  margin: 0 auto;
+  text-align: center;
+  text-shadow: 2px 2px 1px black;
+  color: rgb(246, 242, 234);
+
+  
 }
 
 .catContainer {
@@ -195,6 +214,7 @@ h1 {
   max-width: 800px;
   background-color: rgb(241, 247, 248);
   box-shadow: 1px 1px 8px #b4b4b4;
+  margin-top: 15px;
   margin-bottom: 20px;
 
 }

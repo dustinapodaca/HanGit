@@ -114,10 +114,12 @@ function eQuestionAndAnswer(){
     generateEQ.innerText= eQuestion[x];
     console.log(eQuestion[x]);
     answer = eAnswer[x];
+    answerDisplay.classList.add('wordDisplay');
     answerDisplay.innerText = generateAnswerDisplay(answer);
     console.log(answer);
     keyContainer.addEventListener('click', guess);
   }
+
 
 function generateAnswerDisplay(word) {
   wordDisplay = [];
@@ -286,3 +288,76 @@ function animateCat() {
 }
 
 let drawArray = [puddle, fifthArm, fourthArm, thirdArm, secondArm, firstArm, head, nooseDisplay];
+
+// chart.js
+
+function displayChart() {
+  let productNames = [];
+  let productClicks = [];
+  let productViews = [];
+
+  for (let i = 0; i < Product.allProductsArray.length; i++) {
+    productNames.push(Product.allProductsArray[i].name);
+    productClicks.push(Product.allProductsArray[i].clicks);
+    productViews.push(Product.allProductsArray[i].views);
+  }
+
+  const chartGraphics = {
+    type: 'bar',
+    data: {
+      labels: productNames,
+      datasets: [{
+        label: 'Number of Votes',
+        data: productClicks,
+        backgroundColor: [
+          'rgb(255, 253, 185)',
+        ],
+        borderColor: [
+          'rgb(236, 177, 156)'
+        ],
+        borderWidth: 1
+      },
+      {
+        label: 'Number of Views',
+        data: productViews,
+        backgroundColor: [
+          'rgb(236, 177, 156)'
+        ],
+        borderColor: [
+          'rgb(224, 150, 123)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  };
+  let canvasChart = document.getElementById('resultsChart').getContext('2d');
+  const myChart = new Chart(canvasChart, chartGraphics);
+}
+
+// LOCAL STORAGE STRINGIFY----------------------------------------------------------------
+// const stringData = JSON.stringify(Product.allProductsArray);
+const stringData = Product.allProductsArray;
+// console.log('stringified products >>>', stringData);
+// LOCAL STORAGE SETITEM --------------------------------------------------------------
+localStorage.setItem('stringData', JSON.stringify(stringData));
+generateRandomPicture();
+
+
+// LOCAL STORAGE RETREVIAL -------------------------------------------------
+const storedProducts = localStorage.getItem('stringData');
+if (storedProducts) {
+  Product.allProductsArray = JSON.parse(storedProducts);
+}
+// console.log('storedProducts', storedProducts);
+// const parsedProducts = JSON.parse(storedProducts);
+// console.log('parsed Products >>>', parsedProducts);
+console.log(storedProducts);
+
+generateRandomPicture();
