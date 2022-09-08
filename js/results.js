@@ -1,8 +1,8 @@
 'use strict';
 
-// let playerName = prompt('You have completed HanGit! Please enter your name to see your results.');
-// let displayName = document.getElementById('resultsInfo');
-// displayName.innerText = `Thank you ${playerName} for playing HanGit! Please see your results below.`;
+let playerName = prompt('You have completed HanGit! Please enter your name to see your results.');
+let displayName = document.getElementById('resultsInfo');
+displayName.innerText = `Thank you ${playerName} for playing HanGit! Please see your results below.`;
 
 function displayChart() {
   // let labels = ['Answers Correct', 'Lives Remaining'];
