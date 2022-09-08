@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 html {
   min-height: 100%;
   margin: 0;
 }
 
+=======
+html{
+  height: 100%;
+}
+>>>>>>> 04ac45eab99c71de05a0df6de2c9dd72ca621196
 body {
   width: 100%;
   margin: 0 auto;
@@ -142,7 +148,6 @@ h1 {
 
 .keyboardButtons:hover {
   background-color: rgb(156, 218, 240);
-  /* box-shadow: 1px 1px 4px rgb(60, 113, 133); */
   color: white;
   cursor: pointer;
 }
