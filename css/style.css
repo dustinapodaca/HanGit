@@ -66,13 +66,17 @@ h1 {
   cursor: pointer;
 }
 
+.diffButtons:focus {
+  background-color: rgb(156, 218, 240);
+  color: white;
+} 
+
 #resultsDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-right: 30px;
-
 }
 
 .resultsLink {
@@ -166,10 +170,10 @@ h1 {
   cursor: pointer;
 }
 
-/* .selected {
+.selected {
   background-color: rgb(156, 218, 240);
   color: white;
-} */
+}
 
 .counterDiv {
   display: flex;
@@ -179,7 +183,7 @@ h1 {
   margin: 0 auto;
   padding: 20px;
   max-width: 900px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   border: thin solid black;
   box-shadow: 1px 1px 8px #b4b4b4;
   background-color: rgb(241, 247, 248);
@@ -200,8 +204,8 @@ h1 {
 
 #clicks {
   font-size: 19px;
-  font-weight: 400;
-  text-shadow: 1px 1px 0px rgb(0, 0, 0);
+  font-weight: 300;
+  /* text-shadow: 1px 1px 0px rgb(0, 0, 0); */
 }
 
 
@@ -258,10 +262,9 @@ h1 {
   width: 100%;
   max-width: 800px;
   background-color: rgb(241, 247, 248);
-  box-shadow: 1px 1px 8px #b4b4b4;
+  box-shadow: inset 1px 1px 50px rgb(112, 163, 182);
   margin-top: 15px;
   margin-bottom: 20px;
-
 }
 
 #octocat {

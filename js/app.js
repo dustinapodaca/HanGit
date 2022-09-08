@@ -43,7 +43,7 @@ const mAnswer = [
 ];
 
 const hQuestion = [
-  'what is the name of a file that specifies the things for git to not look at? ',
+  'What is the name of a file that specifies the things for git to not look at? ',
   'I have just started today and want to see the previous commits, what command would I run that saves space in the terminal ? ',
   'The code that I just wrote is FUBAR, I have found the commit hash I would like to revert back to, what command would I run ? ',
   'I have committed a project but the commit message is full of spelling errors, what command would I run to fix that ? ',
@@ -115,7 +115,7 @@ let z = 0; // increment by 2!
 function eQuestionAndAnswer(){
   let generateEQ = document.getElementById('question');
   if (allArray[z][x] === undefined) {
-    generateEQ.innerText= 'Nice job!, now try out the other difficulties!';
+    generateEQ.innerText= 'Nice job!, if you want to hanG around, try another difficulty or view your results!';
     return;
   }
   generateEQ.innerText= allArray[z][x];
@@ -195,6 +195,8 @@ function guess(event) {
       localStorage.setItem('toStore', JSON.stringify(y));
       localStorage.setItem('lives', JSON.stringify(clickRemaining));
       eQuestionAndAnswer();
+      keyContainer.innerHTML = '';
+      generateKeyboard();
       return;
     }
   }
