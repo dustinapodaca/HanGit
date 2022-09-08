@@ -143,7 +143,7 @@ function generateAnswerDisplay(word) {
 function answerContainer() {
   clickRemaining = 8;
   wordDisplay = [];
-  livesDisplay.innerText = `You have ${clickRemaining} lives!`;
+  livesDisplay.innerText = `Welcome to HanGit! We're glad you are here! To start, you have ${clickRemaining} lives!`;
   keyContainer.addEventListener('click', handleClick);
   x = 0;
   eQuestionAndAnswer();
@@ -176,19 +176,21 @@ function guess(event) {
         counter = 0;
       }
       if (clickRemaining > 1) {
-        livesDisplay.innerHTML = `You have ${clickRemaining} lives!`;
+        livesDisplay.innerHTML = `You now have ${clickRemaining} lives!`;
+        counterDiv.style.backgroundColor = '#9cdaf0';
       } else if (clickRemaining === 1) {
-        livesDisplay.innerHTML = `You have ${clickRemaining} lives!`;
+        livesDisplay.innerHTML = `Oh no! You only have ${clickRemaining} life left! Be careful!`;
+        counterDiv.style.backgroundColor = '#ffbf00';
       } else {
-        correctMessage.innerHTML = 'Uh Oh, GitConflict! Try again!';
+        livesDisplay.innerHTML = 'Uh Oh, Git Conflict! Play again!';
         counterDiv.style.backgroundColor = '#dc143c';
       }
     } else {
       return;
     }
     if (answer === winningCheck) {
-      correctMessage.innerHTML = `You GitIt! "${answer}" is correct!`;
-      correctDiv.style.backgroundColor = '#32de84';
+      livesDisplay.innerHTML = `You GitIt! "${answer}" is correct!`;
+      counterDiv.style.backgroundColor = '#48f783';
       x++;
       y = x;
       localStorage.setItem('toStore', JSON.stringify(y));

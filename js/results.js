@@ -12,7 +12,7 @@ function displayChart() {
         label: 'Answers Correct',
         data: [y],
         backgroundColor: [
-          'rgb(184, 229, 246)',
+          'rgb(121, 245, 170)',
         ],
         borderColor: [
           'rgb(184, 229, 246)'
@@ -23,7 +23,7 @@ function displayChart() {
         label: 'Lives Remaining',
         data: [z],
         backgroundColor: [
-          'rgb(40, 117, 157)',
+          'rgb(184, 229, 246)',
         ],
         borderColor: [
           'rgb(213, 238, 248)'

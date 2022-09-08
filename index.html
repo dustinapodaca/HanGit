@@ -13,11 +13,6 @@
     <div id="headerDiv">
       <img src="./assets/img/fullImage.png" alt="HanGit Logo" class="headerImg">
       <h1>HanGit</h1>
-      <div id="buttonDiv">
-        <button type="submit" class="diffButtons" id="easy">Easy</button>
-        <button type="submit" class="diffButtons" id="medium">Medium</button>
-        <button type="submit" class="diffButtons" id="hard">Hard</button>
-      </div>
     </div>
     <div id="resultsDiv">
       <a href="results.html" class="resultsLink">Your Results</a>
@@ -26,21 +21,27 @@
   <main>
     <div class="questionContainer">
       <p id="question">I have completed my work and committed on my branch then switched to the main branch, what command would I run to add
-      my branch to main?</p>
-    </div>
-    <div class="catContainer">
-      <canvas id="octocat" width="1200" height="950"></canvas>
+        my branch to main?</p>
+      </div>
+      <div class="gameAndCounter">
+        <div class="counterDiv">
+        <div id="buttonDiv">
+          <button type="submit" class="diffButtons" id="easy">Easy</button>
+          <button type="submit" class="diffButtons" id="medium">Medium</button>
+          <button type="submit" class="diffButtons" id="hard">Hard</button>
+        </div>
+        <p class="pClicks" id="livesLeft"><a id="clicks">8</a></p>
+        <div>
+          <button type="submit" class="resetButton" id="reset">Reset Game</button>
+        </div>
+      </div>
+      <div class="catContainer">
+        <canvas id="octocat" width="1200" height="950"></canvas>
+      </div>
     </div>
     <div id="letterDisplay"></div>
     <div id="keyboardContainer">
       <div id="keyboardButtons"></div>
-    </div>
-    <div class="counterDiv">
-      <p class="pClicks" id="livesLeft"><a id="clicks">8</a></p>
-      <p class="correct" id="correct"><a id="correct"></a></p>
-      <div>
-        <button type="submit" class="resetButton" id="reset">Reset Game</button>
-      </div>
     </div>
     <div class="infoHeader">
       <h3>Why HanGit?</h3>
