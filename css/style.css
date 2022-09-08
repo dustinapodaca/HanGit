@@ -1,7 +1,10 @@
+html {
+  min-height: 100%;
+  margin: 0;
+}
 
 body {
   width: 100%;
-  height: 100%;
   margin: 0 auto;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   max-width: 900px;
@@ -10,7 +13,6 @@ body {
     linear-gradient(to top left, lime, transparent),
     linear-gradient(to top right, blue, transparent);
   background-blend-mode: screen;
-  /* background: linear-gradient(110deg, rgb(184, 229, 246) 60%, rgb(213, 238, 248) 60%); */
 }
 
 header {
@@ -157,10 +159,6 @@ h1 {
   align-items: center;
   margin: 0 auto;
   max-width: 900px;
-  /* border: thin solid black;
-  box-shadow: 1px 1px 8px #b4b4b4;
-  background-color: rgb(241, 247, 248);
-  border-radius: 5px; */
 }
 
 #buttonDiv {
@@ -231,12 +229,10 @@ h1 {
 }
 
 #clicks {
-  font-size: 24px;
+  font-size: 21px;
   line-height: 27px;
   font-weight: 200;
-  /* text-shadow: 1px 1px 0px rgb(0, 0, 0); */
 }
-
 
 .resetButton {
   margin: 6px auto;
@@ -281,15 +277,10 @@ h1 {
 }
 
 #letterDisplay {
-  /* border: thin solid black; */
   max-width: 900px;
   margin: 0 auto;
   display: block;
   height: 55px;
-  /* margin-bottom: 15px; */
-  /* background-color: rgb(241, 247, 248);
-  box-shadow: 1px 1px 8px #b4b4b4;
-  border-radius: 5px; */
 }
 
 .wordDisplay {
