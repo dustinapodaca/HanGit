@@ -8,11 +8,7 @@ let answerDisplay = document.getElementById('letterDisplay');
 let livesDisplay = document.getElementById('clicks');
 let keyContainer = document.getElementById('keyboardButtons');
 const canvas = document.getElementById('octocat');
-<<<<<<< HEAD:app.js
-canvas.getContext('2d');
-=======
 let y = 0;
->>>>>>> 003dae4398db2d8132aad0b262415294d3d7d078:js/app.js
 
 const eQuestion = [
   'I need to stage my files in order to make them available in git hub, what is the first command would I run ? ',
@@ -64,10 +60,6 @@ const hAnswer = [
 
 const allArray = [eQuestion, eAnswer, mQuestion, mAnswer, hQuestion, hAnswer];
 
-<<<<<<< HEAD:app.js
-
-=======
->>>>>>> 003dae4398db2d8132aad0b262415294d3d7d078:js/app.js
 function buttonClick () {
   console.log('yes');
 }
