@@ -7,9 +7,8 @@ let winningCheck = '';
 let answerDisplay = document.getElementById('letterDisplay');
 let livesDisplay = document.getElementById('clicks');
 let keyContainer = document.getElementById('keyboardButtons');
-let y = 0;
 const canvas = document.getElementById('octocat');
-// canvas.getContext('2d');
+let y = 0;
 
 const eQuestion = [
   'I need to stage my files in order to make them available in git hub, what is the first command would I run ? ',
@@ -61,10 +60,6 @@ const hAnswer = [
 
 const allArray = [eQuestion, eAnswer, mQuestion, mAnswer, hQuestion, hAnswer];
 
-
-
-
-
 function buttonClick () {
   console.log('yes');
 }
@@ -74,7 +69,6 @@ let mediumButtonId = document.getElementById('medium');
 let hardButtonId = document.getElementById('hard');
 // let resetButtonId = document.getElementById('reset');
 // let letterDisplay = document.getElementById('letterDisplay');
-
 
 easyButtonId.addEventListener('click', function () {
   z = 0;
@@ -101,14 +95,12 @@ function generateKeyboard() {
     let createButton = document.createElement('button');
     createButton.id = spliced;
     createButton.innerHTML = spliced;
-    letterDisplay.append(createButton);
     createButton.classList.add('keyboardButtons');
     keyContainer.appendChild(createButton);
     let alphaButtonId = document.getElementById(spliced);
     alphaButtonId.addEventListener('click', buttonClick);
   }
 }
-
 
 function handleClick(event) {
   const isButton = event.target.nodeName === 'BUTTON';
