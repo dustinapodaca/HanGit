@@ -9,7 +9,7 @@ let livesDisplay = document.getElementById('clicks');
 let keyContainer = document.getElementById('keyboardButtons');
 let y = 0;
 const canvas = document.getElementById('octocat');
-// canvas.getContext('2d');
+canvas.getContext('2d');
 
 const eQuestion = [
   'I need to stage my files in order to make them available in git hub, what is the first command would I run ? ',
@@ -62,9 +62,6 @@ const hAnswer = [
 const allArray = [eQuestion, eAnswer, mQuestion, mAnswer, hQuestion, hAnswer];
 
 
-
-
-
 function buttonClick () {
   console.log('yes');
 }
@@ -72,8 +69,6 @@ function buttonClick () {
 let easyButtonId = document.getElementById('easy');
 let mediumButtonId = document.getElementById('medium');
 let hardButtonId = document.getElementById('hard');
-// let resetButtonId = document.getElementById('reset');
-// let letterDisplay = document.getElementById('letterDisplay');
 
 
 easyButtonId.addEventListener('click', function () {
@@ -136,7 +131,6 @@ function eQuestionAndAnswer(){
   console.log(answer);
   keyContainer.addEventListener('click', guess);
 }
-
 
 function generateAnswerDisplay(word) {
   wordDisplay = [];
