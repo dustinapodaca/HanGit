@@ -1,5 +1,9 @@
 'use strict';
 
+//Window load clears local storage for a new game with new individualized results
+window.onload = window.localStorage.clear();
+
+//Global Variables
 let wordDisplay = [];
 let answer = '';
 let clickRemaining = 8;
@@ -7,12 +11,14 @@ let winningCheck = '';
 let answerDisplay = document.getElementById('letterDisplay');
 let livesDisplay = document.getElementById('clicks');
 let keyContainer = document.getElementById('keyboardButtons');
+let counterDiv = document.getElementById('livesLeft');
 const canvas = document.getElementById('octocat');
 let y = 0;
 
+//Question and Answer Arrays
 const eQuestion = [
-  'I need to stage my files in order to make them available in git hub, what is the first command would I run ? ',
-  'After adding the files I have made, I need to add a message with the files, what command would I run ? ',
+  'I need to stage my files in order to make them available in GitHub, what is the first command I would run? ',
+  'After adding the files I have made, I need to add a message with the files, what command would I run? ',
   'If I am in the main branch, and have already added and committed my files what is the final command?',
   'I want to see all of the branches that are available, what command would I run?',
   'I want to check which files I have commited, what git command do I use?'
@@ -27,11 +33,11 @@ const eAnswer = [
 ];
 
 const mQuestion = [
-  'By using the ___ command, Adrienne can move branches around, to avoid unnecessary merge commits.',
-  'Kai wants to remove untracked files from the working directory, so he uses the ___ command to do so.',
-  'Jim accidentally made a change to a file in the working directory. What git command can Jim use to undo the change ?',
-  'Sarah noticed she had a faulty commit, and wants to undo the committed snapshot.How can she safely remove it from the code base ?',
-  'I have completed my work and committed on my branch then switched to the main branch, , what command would I run to add my branch to main ? '
+  'By using the ____ command, Adrienne can move branches around to avoid unnecessary merge commits.',
+  'Kai wants to remove untracked files from the working directory, so he uses the ______ command to do so.',
+  'Jim accidentally made a change to a file in the working directory. What git command can Jim use to undo the change?',
+  'Sarah noticed she had a faulty commit, and wants to undo the committed snapshot.How can she safely remove it from the code base?',
+  'I have completed my work and committed on my branch then switched to the main branch, , what command would I run to add my branch to main? '
 ];
 
 const mAnswer = [
@@ -44,9 +50,9 @@ const mAnswer = [
 
 const hQuestion = [
   'What is the name of a file that specifies the things for git to not look at? ',
-  'I have just started today and want to see the previous commits, what command would I run that saves space in the terminal ? ',
-  'The code that I just wrote is FUBAR, I have found the commit hash I would like to revert back to, what command would I run ? ',
-  'I have committed a project but the commit message is full of spelling errors, what command would I run to fix that ? ',
+  'I have just started today and want to see the previous commits, what command would I run that saves space in the terminal? ',
+  'The code that I just wrote is FUBAR, I have found the commit hash I would like to revert back to, what command would I run? ',
+  'I have committed a project but the commit message is full of spelling errors, what command would I run to fix that? ',
   'I want to temporarily store all the modified tracked files, which git command would I use?'
 ];
 
@@ -58,17 +64,12 @@ const hAnswer = [
   'stash save'
 ];
 
+//Array of Arrays for Questions and Answers
 const allArray = [eQuestion, eAnswer, mQuestion, mAnswer, hQuestion, hAnswer];
-
-function buttonClick () {
-  console.log('yes');
-}
 
 let easyButtonId = document.getElementById('easy');
 let mediumButtonId = document.getElementById('medium');
 let hardButtonId = document.getElementById('hard');
-// let resetButtonId = document.getElementById('reset');
-// let letterDisplay = document.getElementById('letterDisplay');
 
 easyButtonId.addEventListener('click', function () {
   z = 0;
@@ -87,7 +88,7 @@ hardButtonId.addEventListener('click', function () {
 });
 // resetButtonId.addEventListener('click', buttonClick);
 
-//makes the alphabet buttons
+//Generate Live Keyboard function
 function generateKeyboard() {
   const buttonsHTML = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','.','-', ' '];
   while (buttonsHTML.length > 0) {
@@ -97,8 +98,6 @@ function generateKeyboard() {
     createButton.innerHTML = spliced;
     createButton.classList.add('keyboardButtons');
     keyContainer.appendChild(createButton);
-    let alphaButtonId = document.getElementById(spliced);
-    alphaButtonId.addEventListener('click', buttonClick);
   }
 }
 
@@ -186,6 +185,7 @@ function guess(event) {
         livesDisplay.innerHTML = `You have ${clickRemaining} life!`;
       } else {
         livesDisplay.innerHTML = 'Uh Oh, GitConflict! Try again!';
+        counterDiv.style.backgroundColor = '#dc143c';
       }
     } else {
       return;
@@ -207,7 +207,7 @@ function guess(event) {
 generateKeyboard();
 answerContainer();
 
-// Individual Functions for OctoCat Animation on Canvas
+// Individual Functions for OctoCat Animation on Canvas Element
 const nooseDisplay = function () {
   const canvas = document.getElementById('octocat');
   const context = canvas.getContext('2d');
@@ -297,13 +297,13 @@ const puddle = function () {
   }
 };
 
+//Functions Array for OctoCat
+let drawArray = [puddle, fifthArm, fourthArm, thirdArm, secondArm, firstArm, head, nooseDisplay];
+
 //Calling OctoCat functions from array by Clicks Remaining
 function animateCat() {
   (drawArray[clickRemaining]());
 }
-
-//Functions Array for OctoCat
-let drawArray = [puddle, fifthArm, fourthArm, thirdArm, secondArm, firstArm, head, nooseDisplay];
 
 //PARSE LOCAL STORAGE
 let storedAnswers = localStorage.getItem('toStore');
@@ -315,11 +315,14 @@ if (storedClicks) {
   clickRemaining = JSON.parse(storedClicks);
 }
 
-//RESET BUTTON for LOCAL STORAGE and GAME
+//RESET BUTTON for LOCAL STORAGE and GAME RESET
 function reset(){
   localStorage.clear();
   document.location.reload();
 }
-// Event Listener for RESET BUTTON
+// EVENT LISTENER for RESET BUTTON
 let resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', reset);
+
+
+

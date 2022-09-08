@@ -4,7 +4,12 @@ body {
   margin: 0 auto;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   max-width: 900px;
-  background: linear-gradient(110deg, rgb(184, 229, 246) 60%, rgb(213, 238, 248) 60%);
+  background:
+    linear-gradient(rgb(104, 200, 255), transparent),
+    linear-gradient(to top left, lime, transparent),
+    linear-gradient(to top right, blue, transparent);
+  background-blend-mode: screen;
+  /* background: linear-gradient(110deg, rgb(184, 229, 246) 60%, rgb(213, 238, 248) 60%); */
 }
 
 header {
@@ -152,7 +157,7 @@ h1 {
   align-items: center;
   width: 35px;
   height: 35px;
-  margin: 0 10px 10px 0;
+  margin: 5px;
   border-radius: 5px;
   border: 1px solid rgb(118, 205, 236);
   color: black;
@@ -161,6 +166,7 @@ h1 {
   font-weight: 300;
   font-size: 18px;
   transition: 300ms;
+
 }
 
 .keyboardButtons:hover {
@@ -249,7 +255,7 @@ h1 {
   letter-spacing: -3px;
   margin: 0 auto;
   text-align: center;
-  text-shadow: 2px 2px 1px black;
+  text-shadow: 1px 1.5px 0.5px black;
   color: rgb(246, 242, 234);
   cursor: default;
 }
@@ -260,9 +266,9 @@ h1 {
   border: 1px solid black;
   border-radius: 5px;
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
   background-color: rgb(241, 247, 248);
-  box-shadow: inset 1px 1px 50px rgb(112, 163, 182);
+  box-shadow: inset 1px 1px 20px rgb(112, 163, 182);
   margin-top: 15px;
   margin-bottom: 20px;
 }
@@ -317,5 +323,7 @@ footer p {
   font-size: 14px;
   margin-top: 10px;
   margin-bottom: 30px;
+  color: white;
+  text-shadow: 0.5px 0.5px 0.5px black;
 }
 
