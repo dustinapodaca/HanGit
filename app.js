@@ -187,6 +187,7 @@ function guess(event) {
       y = x;
       console.log(y);
       localStorage.setItem('toStore', JSON.stringify(y));
+      localStorage.setItem('lives', JSON.stringify(clickRemaining));
       eQuestionAndAnswer();
       return;
     }
@@ -297,6 +298,10 @@ let drawArray = [puddle, fifthArm, fourthArm, thirdArm, secondArm, firstArm, hea
 let storedAnswers = localStorage.getItem('toStore');
 if (storedAnswers) {
   y = JSON.parse(storedAnswers);
+}
+let storedClicks = localStorage.getItem('lives');
+if (storedClicks) {
+  clickRemaining = JSON.parse(storedClicks);
 }
 
 //RESET BUTTON for LOCAL STORAGE and GAME
