@@ -27,37 +27,41 @@ const eAnswer = [
   'status'
 ];
 
-// const mQuestion = [
-//   'By using the ___ command, Adrienne can move branches around, to avoid unnecessary merge commits.',
-//   'Kai wants to remove untracked files from the working directory, so he uses the ___ command to do so.',
-//   'Jim accidentally made a change to a file in the working directory. What git command can Jim use to undo the change ?',
-//   'Sarah noticed she had a faulty commit, and wants to undo the committed snapshot.How can she safely remove it from the code base ?',
-//   'I have completed my work and committed on my branch then switched to the main branch, , what command would I run to add my branch to main ? '
-// ];
+const mQuestion = [
+  'By using the ___ command, Adrienne can move branches around, to avoid unnecessary merge commits.',
+  'Kai wants to remove untracked files from the working directory, so he uses the ___ command to do so.',
+  'Jim accidentally made a change to a file in the working directory. What git command can Jim use to undo the change ?',
+  'Sarah noticed she had a faulty commit, and wants to undo the committed snapshot.How can she safely remove it from the code base ?',
+  'I have completed my work and committed on my branch then switched to the main branch, , what command would I run to add my branch to main ? '
+];
 
-// const mAnswer = [
-//   'init',
-//   'rebase',
-//   'clean',
-//   'reset',
-//   'revert'
-// ];
+const mAnswer = [
+  'init',
+  'rebase',
+  'clean',
+  'reset',
+  'revert'
+];
 
-// const hQuestion = [
-//   'what is the name of a file that specifies the things for git to not look at? ',
-//   'I have just started today and want to see the previous commits, what command would I run that saves space in the terminal ? ',
-//   'The code that I just wrote is FUBAR, I have found the commit hash I would like to revert back to, what command would I run ? ',
-//   'I have committed a project but the commit message is full of spelling errors, what command would I run to fix that ? ',
-//   'I want to temporarily store all the modified tracked files, which git command would I use?'
-// ];
+const hQuestion = [
+  'what is the name of a file that specifies the things for git to not look at? ',
+  'I have just started today and want to see the previous commits, what command would I run that saves space in the terminal ? ',
+  'The code that I just wrote is FUBAR, I have found the commit hash I would like to revert back to, what command would I run ? ',
+  'I have committed a project but the commit message is full of spelling errors, what command would I run to fix that ? ',
+  'I want to temporarily store all the modified tracked files, which git command would I use?'
+];
 
-// const hAnswer = [
-//   '.gitignore',
-//   'log --oneline',
-//   'reset',
-//   'commit --amend -m',
-//   'stash save'
-// ];
+const hAnswer = [
+  '.gitignore',
+  'log --oneline',
+  'reset',
+  'commit --amend -m',
+  'stash save'
+];
+
+const allArray = [eQuestion, eAnswer, mQuestion, mAnswer, hQuestion, hAnswer];
+
+
 
 
 
@@ -65,21 +69,33 @@ function buttonClick () {
   console.log('yes');
 }
 
-// let easyButtonId = document.getElementById('easy');
-// let mediumButtonId = document.getElementById('medium');
-// let hardButtonId = document.getElementById('hard');
+let easyButtonId = document.getElementById('easy');
+let mediumButtonId = document.getElementById('medium');
+let hardButtonId = document.getElementById('hard');
 // let resetButtonId = document.getElementById('reset');
 // let letterDisplay = document.getElementById('letterDisplay');
 
 
-// easyButtonId.addEventListener('click', buttonClick);
-// mediumButtonId.addEventListener('click', buttonClick);
-// hardButtonId.addEventListener('click', buttonClick);
+easyButtonId.addEventListener('click', function () {
+  z = 0;
+  x = 0;
+  eQuestionAndAnswer();
+});
+mediumButtonId.addEventListener('click', function () {
+  z = 2;
+  x = 0;
+  eQuestionAndAnswer();
+});
+hardButtonId.addEventListener('click', function () {
+  z = 4;
+  x = 0;
+  eQuestionAndAnswer();
+});
 // resetButtonId.addEventListener('click', buttonClick);
 
 //makes the alphabet buttons
 function generateKeyboard() {
-  const buttonsHTML = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','.','-'];
+  const buttonsHTML = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','.','-', ' '];
   while (buttonsHTML.length > 0) {
     let spliced = buttonsHTML.shift();
     let createButton = document.createElement('button');
@@ -104,16 +120,17 @@ function handleClick(event) {
 }
 
 let x = 0;
+let z = 0; // increment by 2!
 
 function eQuestionAndAnswer(){
   let generateEQ = document.getElementById('question');
-  if (eQuestion[x] === undefined) {
+  if (allArray[z][x] === undefined) {
     generateEQ.innerText= 'Nice job!, now try out the other difficulties!';
     return;
   }
-  generateEQ.innerText= eQuestion[x];
-  console.log(eQuestion[x]);
-  answer = eAnswer[x];
+  generateEQ.innerText= allArray[z][x];
+  console.log(allArray[z][x]);
+  answer = allArray[z + 1][x];
   answerDisplay.classList.add('wordDisplay');
   answerDisplay.innerText = generateAnswerDisplay(answer);
   console.log(answer);
@@ -187,6 +204,7 @@ function guess(event) {
       y = x;
       console.log(y);
       localStorage.setItem('toStore', JSON.stringify(y));
+      localStorage.setItem('lives', JSON.stringify(clickRemaining));
       eQuestionAndAnswer();
       return;
     }
@@ -297,6 +315,10 @@ let drawArray = [puddle, fifthArm, fourthArm, thirdArm, secondArm, firstArm, hea
 let storedAnswers = localStorage.getItem('toStore');
 if (storedAnswers) {
   y = JSON.parse(storedAnswers);
+}
+let storedClicks = localStorage.getItem('lives');
+if (storedClicks) {
+  clickRemaining = JSON.parse(storedClicks);
 }
 
 //RESET BUTTON for LOCAL STORAGE and GAME
