@@ -1,3 +1,4 @@
+
 body {
   width: 100%;
   height: 100%;
@@ -42,39 +43,6 @@ h1 {
 #headerDiv {
   display: flex;
 }
-
-#buttonDiv {
-  display: block;
-  margin-top: 5px;
-}
-
-.diffButtons {
-  display: block;
-  margin: 6px auto;
-  margin-left: 20px;
-  padding: 0 5px;
-  width: 100%;
-  max-width: 220px;
-  box-sizing: border-box;
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 300;
-  border: 1px solid rgb(118, 205, 236);
-  border-radius: 5px;
-  background-color: rgb(251, 254, 255);
-  transition: 300ms;
-  color: black;
-}
-
-.diffButtons:hover {
-  background-color: rgb(156, 218, 240);
-  color: white;
-  cursor: pointer;
-}
-
-.diffButtons:focus {
-  background-color: rgb(156, 218, 240);
-  color: white;
-} 
 
 #resultsDiv {
   display: flex;
@@ -132,6 +100,7 @@ h1 {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  margin-top: 5px;
   padding: 30px;
   max-width: 900px;
   margin-bottom: 15px;
@@ -181,24 +150,76 @@ h1 {
   color: white;
 }
 
-.counterDiv {
+.gameAndCounter {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  padding: 20px;
   max-width: 900px;
-  margin-bottom: 20px;
-  border: thin solid black;
+  /* border: thin solid black;
   box-shadow: 1px 1px 8px #b4b4b4;
+  background-color: rgb(241, 247, 248);
+  border-radius: 5px; */
+}
+
+#buttonDiv {
+  display: block;
+  margin-top: 5px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.diffButtons {
+  display: block;
+  margin: 6px auto;
+  padding: 0 5px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+  font-size: 14px;
+  border: 1px solid rgb(118, 205, 236);
+  border-radius: 5px;
+  background-color: rgb(251, 254, 255);
+  transition: 300ms;
+  color: black;
+}
+
+.diffButtons:hover {
+  background-color: rgb(156, 218, 240);
+  color: white;
+  cursor: pointer;
+}
+
+.diffButtons:focus {
+  background-color: rgb(156, 218, 240);
+  color: white;
+}
+
+.counterDiv {
+  display: block;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 150px;
+  height: 435px;
+  border: thin solid black;
   background-color: rgb(241, 247, 248);
   border-radius: 5px;
   font-family: 'Roboto Mono', monospace;
+  background-color: rgb(241, 247, 248);
+  box-shadow: inset 1px 1px 20px rgb(112, 163, 182);
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
 
 .pClicks {
   padding: 8px;
+  height: 250px;
   background-color: rgb(156, 218, 240);
   color: white;
   border: thin solid black;
@@ -206,11 +227,13 @@ h1 {
   margin-left: 2px;
   font-weight: 300;
   cursor: default;
+  margin-bottom: 15px;
 }
 
 #clicks {
-  font-size: 19px;
-  font-weight: 300;
+  font-size: 24px;
+  line-height: 27px;
+  font-weight: 200;
   /* text-shadow: 1px 1px 0px rgb(0, 0, 0); */
 }
 
@@ -223,6 +246,7 @@ h1 {
   box-sizing: border-box;
   font-family: 'Roboto Mono', monospace;
   font-weight: 300;
+  font-size: 14px;
   border: 2px solid rgb(118, 205, 236);
   border-radius: 5px;
   background-color: rgb(251, 254, 255);
@@ -234,6 +258,26 @@ h1 {
   background-color: rgb(156, 218, 240);
   color: white;
   cursor: pointer;
+}
+
+.catContainer {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 600px;
+  background-color: rgb(241, 247, 248);
+  box-shadow: inset 1px 1px 20px rgb(112, 163, 182);
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+#octocat {
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
 }
 
 #letterDisplay {
@@ -260,25 +304,6 @@ h1 {
   cursor: default;
 }
 
-.catContainer {
-  display: block;
-  margin: 0 auto;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 100%;
-  max-width: 600px;
-  background-color: rgb(241, 247, 248);
-  box-shadow: inset 1px 1px 20px rgb(112, 163, 182);
-  margin-top: 15px;
-  margin-bottom: 20px;
-}
-
-#octocat {
-  display: block;
-  margin: 0 auto;
-  height: 100%;
-  width: 100%;
-}
 
 .infoHeader {
   display: flex;
