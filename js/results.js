@@ -51,3 +51,4 @@ function reset() {
   localStorage.clear();
   document.location.reload();
 }
+reset();

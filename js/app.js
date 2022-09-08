@@ -10,8 +10,10 @@ let clickRemaining = 8;
 let winningCheck = '';
 let answerDisplay = document.getElementById('letterDisplay');
 let livesDisplay = document.getElementById('clicks');
+let correctMessage = document.getElementById('correct');
 let keyContainer = document.getElementById('keyboardButtons');
 let counterDiv = document.getElementById('livesLeft');
+let correctDiv = document.getElementById('correct');
 const canvas = document.getElementById('octocat');
 let y = 0;
 
@@ -86,7 +88,6 @@ hardButtonId.addEventListener('click', function () {
   x = 0;
   eQuestionAndAnswer();
 });
-// resetButtonId.addEventListener('click', buttonClick);
 
 //Generate Live Keyboard function
 function generateKeyboard() {
@@ -120,19 +121,15 @@ function eQuestionAndAnswer(){
     return;
   }
   generateEQ.innerText= allArray[z][x];
-  console.log(allArray[z][x]);
   answer = allArray[z + 1][x];
   answerDisplay.classList.add('wordDisplay');
   answerDisplay.innerText = generateAnswerDisplay(answer);
-  console.log(answer);
   keyContainer.addEventListener('click', guess);
 }
-
 
 function generateAnswerDisplay(word) {
   wordDisplay = [];
   let answerArray = word.split('');
-  console.log(answerArray);
   for (let i = 0; i < answer.length; i++) {
     if (answerArray[i] !== '-') {
       wordDisplay.push('_');
@@ -157,7 +154,7 @@ function guess(event) {
   const answerArray = answer.split('');
   let counter = 0;
   if (answer === winningCheck) {
-    livesDisplay.innerHTML = 'You GitIt!';
+    correctMessage.innerHTML = `${answer} is correct!`;
     x++;
     eQuestionAndAnswer();
     return;
@@ -166,7 +163,6 @@ function guess(event) {
       for (let j = 0; j < answer.length; j++) {
         if (guessWord === answerArray[j]) {
           wordDisplay[j] = guessWord;
-          console.log(guessWord);
           answerDisplay.innerHTML = wordDisplay.join(' ');
           winningCheck = wordDisplay.join('');
           counter += 1;
@@ -197,7 +193,6 @@ function guess(event) {
       counterDiv.style.backgroundColor = '#48f783';
       x++;
       y = x;
-      console.log(y);
       localStorage.setItem('toStore', JSON.stringify(y));
       localStorage.setItem('lives', JSON.stringify(clickRemaining));
       eQuestionAndAnswer();
@@ -326,6 +321,3 @@ function reset(){
 // EVENT LISTENER for RESET BUTTON
 let resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', reset);
-
-
-
