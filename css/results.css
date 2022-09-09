@@ -1,6 +1,6 @@
 html {
   margin: 0;
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -15,8 +15,6 @@ body {
   background-blend-mode: screen;
   background-size: cover;
   background-repeat: no-repeat;
-  /* background: linear-gradient(110deg, rgb(184, 229, 246) 60%, rgb(213, 238, 248) 60%); */
-
 }
 
 header {
