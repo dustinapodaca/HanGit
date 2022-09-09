@@ -1,6 +1,6 @@
 html {
   margin: 0;
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -15,8 +15,6 @@ body {
   background-blend-mode: screen;
   background-size: cover;
   background-repeat: no-repeat;
-  /* background: linear-gradient(110deg, rgb(184, 229, 246) 60%, rgb(213, 238, 248) 60%); */
-
 }
 
 header {
@@ -50,7 +48,7 @@ h1 {
   display: flex;
 }
 
-#homeDiv {
+#linksDiv {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -93,7 +91,7 @@ h1 {
   transition: 300ms;
 }
 
-.resultsHeader {
+.infoHeader {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,16 +106,27 @@ h1 {
   border-radius: 5px;
 }
 
-h3 {
+h2 {
   font-size: 25px;
   align-items: center;
   justify-content: center;
+  font-family: 'Roboto Mono', monospace;
   display: flex;
   font-weight: 100;
   margin-top: 8px;
 }
 
-.resultsInfo {
+h3 {
+  font-size: 25px;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  font-weight: 100;
+  margin-top: 8px;
+}
+
+.gameInfo {
   text-align: left;
   text-indent: 30px;
   max-width: 800px;
@@ -128,26 +137,90 @@ h3 {
   margin: 10px 30px;
 }
 
-.chartContainer {
-  display: block;
-  margin: 0 auto;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 100%;
-  max-width: 825px;
-  background-color: rgb(241, 247, 248);
-  box-shadow: 1px 1px 8px #b4b4b4;
-  margin-bottom: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+.devContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 15px 15px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "dev1 dev1 dev2 dev2"
+    "dev1 dev1 dev2 dev2"
+    "dev3 dev3 dev4 dev4"
+    "dev3 dev3 dev4 dev4";
 }
 
-#resultsChart {
-  display: block;
-  margin: 0 auto;
-  height: 100%;
+.dev1 {
+  grid-area: dev1;
+  border: thin solid black;
+  box-shadow: 1px 1px 8px #b4b4b4;
+  background-color: rgb(241, 247, 248);
+  border-radius: 5px;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.dev2 {
+  grid-area: dev2;
+  border: thin solid black;
+  box-shadow: 1px 1px 8px #b4b4b4;
+  background-color: rgb(241, 247, 248);
+  border-radius: 5px;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.dev3 {
+  grid-area: dev3;
+  border: thin solid black;
+  box-shadow: 1px 1px 8px #b4b4b4;
+  background-color: rgb(241, 247, 248);
+  border-radius: 5px;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.dev4 {
+  grid-area: dev4;
+  border: thin solid black;
+  box-shadow: 1px 1px 8px #b4b4b4;
+  background-color: rgb(241, 247, 248);
+  border-radius: 5px;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutImg {
+  max-width: 100px;
+  max-height: 125px;
   width: 100%;
-  max-width: 725px;
+  height: 100%;
+  border: 1px solid rgb(112, 187, 214);
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.aboutInfo {
+  padding: 0 0 0 20px;
+  line-height: 20px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+  font-size: 14px;
+  text-indent: 20px;
+  margin: 0 auto;
 }
 
 footer p {
@@ -156,7 +229,7 @@ footer p {
   line-height: 25px;
   font-weight: 300;
   font-size: 14px;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 30px;
   color: white;
   text-shadow: 0.5px 0.5px 0.5px black;
