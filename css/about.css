@@ -9,12 +9,30 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   max-width: 900px;
   background:
-    linear-gradient(rgb(104, 200, 255), transparent),
-    linear-gradient(to top left, lime, transparent),
-    linear-gradient(to top right, blue, transparent);
+    linear-gradient(-45deg,
+      rgb(104, 200, 255),
+      rgb(133, 255, 133),
+      rgb(0, 255, 251),
+      rgb(0, 236, 192),
+      transparent);
   background-blend-mode: screen;
-  background-size: cover;
-  background-repeat: no-repeat;
+  animation: gradient 20s ease infinite;
+  background-size: 400% 400%;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 header {
