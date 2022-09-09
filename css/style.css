@@ -46,12 +46,30 @@ h1 {
   display: flex;
 }
 
-#resultsDiv {
+#linksDiv {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   margin-right: 30px;
+}
+
+.aboutLink {
+  text-decoration: none;
+  border: thin solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgb(156, 218, 240);
+  color: white;
+  font-weight: 200;
+  font-size: 18px;
+  transition: 300ms;
+  margin-right: 15px;
+}
+
+.aboutLink:hover {
+  background-color: rgb(186, 229, 245);
+  color: black;
 }
 
 .resultsLink {
@@ -69,7 +87,6 @@ h1 {
 .resultsLink:hover {
   background-color: rgb(186, 229, 245);
   color: black;
-  /* text-decoration: line-through; */
 }
 
 .questionContainer {
@@ -314,6 +331,7 @@ h3 {
   font-size: 25px;
   align-items: center;
   justify-content: center;
+  font-family: 'Roboto Mono', monospace;
   display: flex;
   font-weight: 100;
   margin-top: 8px;

@@ -29,7 +29,11 @@ ___
 
 ### v2 Wireframe
 
-<img src="./assets/img/hangit-wireframe-2.png" width="830" height="624" alt="wireframe of application">
+<img src="./assets/img/hangit-wireframe-2.png" width="830" height="624" alt="wireframe.v2 of application">
+
+### v3 Wireframe
+
+<img src="./assets/img/hangit-wireframe-3.png" width="830" height="420" alt="wireframe.v3 of application">
 
 ## User Stories
 
