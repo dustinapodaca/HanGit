@@ -123,11 +123,11 @@ function eQuestionAndAnswer(){
   generateEQ.innerText= allArray[z][x];
   answer = allArray[z + 1][x];
   answerDisplay.classList.add('wordDisplay');
-  answerDisplay.innerText = generateAnswerDisplay(answer);
+  answerDisplay.innerText = splitAndJoinAnswer(answer);
   keyContainer.addEventListener('click', guess);
 }
 
-function generateAnswerDisplay(word) {
+function splitAndJoinAnswer(word) {
   wordDisplay = [];
   let answerArray = word.split('');
   for (let i = 0; i < answer.length; i++) {
