@@ -13,7 +13,6 @@ let livesDisplay = document.getElementById('clicks');
 let correctMessage = document.getElementById('correct');
 let keyContainer = document.getElementById('keyboardButtons');
 let counterDiv = document.getElementById('livesLeft');
-let correctDiv = document.getElementById('correct');
 const canvas = document.getElementById('octocat');
 let y = 0;
 
